@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=7 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://c1ih35j0saddb" path="res://scenes/parallax.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://h1nd7n6trqf" path="res://scripts/recyclingground.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_tefeu")
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
 z_index = 1
@@ -32,3 +34,13 @@ position = Vector2(43, 256)
 
 [node name="Storm2" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(44, 55)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(230, 0)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 230, 0)
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 73.5
+offset_right = 257.5
+offset_bottom = 53.0

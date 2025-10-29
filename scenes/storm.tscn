@@ -72,7 +72,7 @@ position = Vector2(-26, -343.5)
 shape = SubResource("RectangleShape2D_iee56")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(21, -21)
+position = Vector2(50, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-214.5, -318.5)
