@@ -3,47 +3,43 @@ extends Node2D
 @export var ground_scene: PackedScene
 @export var segment_count: int = 7
 
-var segments: Array[TileMapLayer] = []
-var segment_width: float = 0.0
-var ground_container: Node2D
+var segments = []
+var segment_width
+var ground_container
 
-
-func _ready() -> void:
-	segment_width = calculate_segment_width()
+func _ready():
 	ground_container = get_node("../GroundContainer")
-
-	for i in range(segment_count):
-		var seg: TileMapLayer = ground_scene.instantiate()
+	segment_width = calculate_segment_width()
+	
+	# spawn a few of the segments
+	for i in segment_count:
+		var seg = ground_scene.instantiate()
 		seg.position.x = i * segment_width
-		seg.position.x = -(i*segment_width)
 		ground_container.add_child(seg)
 		segments.append(seg)
 
-
 func _process(_delta):
-	var camera_x: float = get_viewport().get_camera_2d().global_position.x
-	var screen_width: float = float(get_viewport().size.x)
-
-	var left_limit: float = camera_x - screen_width * 1.2
-
+	var cam = get_viewport().get_camera_2d()
+	var camera_x = cam.global_position.x
+	var screen_w = get_viewport().size.x
+	
+	# chekc if any segments r off screen
 	for seg in segments:
-		
-		if seg.global_position.x + segment_width < left_limit:
-			var rightmost := get_rightmost_segment()
-			seg.global_position.x = rightmost.global_position.x + segment_width
+		if seg.global_position.x + segment_width < camera_x - screen_w * 1.5:
+			# move segment to the right side
+			var right = find_right_segment()
+			seg.global_position.x = right.global_position.x + segment_width
 
-
-func get_rightmost_segment() -> TileMapLayer:
-	var right_seg: TileMapLayer = segments[0]
+func find_right_segment():
+	var right_seg = segments[0]
 	for seg in segments:
 		if seg.global_position.x > right_seg.global_position.x:
 			right_seg = seg
 	return right_seg
 
-
-func calculate_segment_width() -> float:
-	var temp: TileMapLayer = ground_scene.instantiate()
-	var used := temp.get_used_rect()
-	var cell := temp.tile_set.tile_size
-	temp.queue_free()
-	return float(used.size.x * cell.x)
+func calculate_segment_width():
+	var temp_seg = ground_scene.instantiate()
+	var rect = temp_seg.get_used_rect()
+	var tile_size = temp_seg.tile_set.tile_size
+	temp_seg.queue_free()
+	return rect.size.x * tile_size.x

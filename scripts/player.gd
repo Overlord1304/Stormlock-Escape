@@ -52,6 +52,7 @@ func _physics_process(delta):
 		anim.play("idle")
 	else:
 		anim.play("walk")
+#rip function
 func die():
 	if is_dead:
 		return
@@ -61,7 +62,7 @@ func die():
 	set_process(false)
 	set_physics_process(false)
 	
-	anim.play("jump")
+	anim.play("death")
 	await anim.animation_finished
 
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsh7uys7mxodk"
-path="res://.godot/imported/groundtileset.png-bae33335fe9be8eaa78a0764ab40ae6e.ctex"
+uid="uid://dnfcevdxtdcaa"
+path="res://.godot/imported/playersheet-sheet.png-20c23532b01b4cef63ddca5688ff7879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://anims/groundtileset.png"
-dest_files=["res://.godot/imported/groundtileset.png-bae33335fe9be8eaa78a0764ab40ae6e.ctex"]
+source_file="res://sprites/playersheet-sheet.png"
+dest_files=["res://.godot/imported/playersheet-sheet.png-20c23532b01b4cef63ddca5688ff7879.ctex"]
 
 [params]
 

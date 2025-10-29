@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uer0cn4gi6ny"
-path="res://.godot/imported/walking.png-82aee90bb210497c972f7d011f8eea78.ctex"
+uid="uid://bquo2v3f2jhw1"
+path="res://.godot/imported/storm.png-01199c84da2993ebb7eb0b9b07d80d1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://anims/walking.png"
-dest_files=["res://.godot/imported/walking.png-82aee90bb210497c972f7d011f8eea78.ctex"]
+source_file="res://sprites/storm.png"
+dest_files=["res://.godot/imported/storm.png-01199c84da2993ebb7eb0b9b07d80d1b.ctex"]
 
 [params]
 

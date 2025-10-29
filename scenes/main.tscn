@@ -10,10 +10,6 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tefeu")
 
-[node name="player" parent="." instance=ExtResource("6_tefeu")]
-z_index = 1
-position = Vector2(202, 134)
-
 [node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
 position = Vector2(-980, -324)
 
@@ -44,3 +40,6 @@ transform = Transform2D(2, 0, 0, 2, 230, 0)
 offset_left = 73.5
 offset_right = 257.5
 offset_bottom = 53.0
+
+[node name="player" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(228, 112)
