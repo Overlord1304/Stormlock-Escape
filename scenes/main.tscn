@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqjlto8t8tru2"]
+
+[ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c1ih35j0saddb" path="res://scenes/parallax.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://h1nd7n6trqf" path="res://scripts/recyclingground.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("6_tefeu")]
+z_index = 1
+position = Vector2(202, 134)
+
+[node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(-980, -324)
+
+[node name="GroundContainer" type="Node2D" parent="."]
+position = Vector2(0, 152)
+
+[node name="GroundSpawner" type="Node2D" parent="."]
+position = Vector2(0, 2)
+script = ExtResource("4_jyhfs")
+ground_scene = ExtResource("1_sugp2")
+
+[node name="GroundSegment" parent="." instance=ExtResource("1_sugp2")]
+visible = false
+position = Vector2(-176, 16)
+
+[node name="Storm" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(43, 256)
+
+[node name="Storm2" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(44, 55)
