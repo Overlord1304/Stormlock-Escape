@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c1ih35j0saddb" path="res://scenes/parallax.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://h1nd7n6trqf" path="res://scripts/recyclingground.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://damcmu8ik5k7v" path="res://scenes/segments/segment1.tscn" id="5_tipki"]
-[ext_resource type="PackedScene" uid="uid://t70jfwa15jmh" path="res://scenes/segments/segment2.tscn" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://jom0p40tlxoy" path="res://scenes/segments/segment_1.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://ddk7ulhbxjqci" path="res://scenes/segments/segment_2.tscn" id="8_85g3d"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tefeu")
@@ -22,9 +22,6 @@ position = Vector2(0, 152)
 position = Vector2(0, 2)
 script = ExtResource("4_jyhfs")
 ground_scene = ExtResource("1_sugp2")
-gameplay_easy_scene = ExtResource("5_tipki")
-gameplay_hard_scene = ExtResource("6_85g3d")
-game_node_path = NodePath("..")
 
 [node name="GroundSegment" parent="." instance=ExtResource("1_sugp2")]
 visible = false
@@ -48,3 +45,9 @@ offset_bottom = 53.0
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(228, 112)
+
+[node name="segment1" parent="." instance=ExtResource("7_tipki")]
+position = Vector2(640, 113)
+
+[node name="segment2" parent="." instance=ExtResource("8_85g3d")]
+position = Vector2(373, 127)

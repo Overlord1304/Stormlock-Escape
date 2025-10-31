@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed: float = 75.0
+@export var speed: float =50
 func _ready() -> void:
 	$AnimatedSprite2D.play()
 #detecting da player

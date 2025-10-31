@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=4 uid="uid://jom0p40tlxoy"]
+
+[ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_4e3lr"]
+[ext_resource type="Texture2D" uid="uid://2pgc2fq1vkmd" path="res://sprites/spike.png" id="2_sp3y7"]
+[ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="3_sp3y7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oty2d"]
+texture = ExtResource("2_sp3y7")
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wg7yx"]
+sources/0 = SubResource("TileSetAtlasSource_oty2d")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81v3t"]
+size = Vector2(266, 20)
+
+[node name="segment1" type="Node2D"]
+script = ExtResource("1_4e3lr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 13)
+tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAA=")
+tile_set = SubResource("TileSet_wg7yx")
+script = ExtResource("3_sp3y7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
+position = Vector2(0, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(70, -97)
+shape = SubResource("RectangleShape2D_81v3t")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="TileMapLayer"]
+position = Vector2(187, -10)
+rect = Rect2(-106, -10, 116, 20)
+
+[connection signal="screen_entered" from="TileMapLayer/VisibleOnScreenNotifier2D" to="TileMapLayer" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="TileMapLayer/VisibleOnScreenNotifier2D" to="TileMapLayer" method="_on_visible_on_screen_notifier_2d_screen_exited"]

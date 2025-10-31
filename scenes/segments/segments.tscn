@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=4 uid="uid://damcmu8ik5k7v"]
+
+[ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="1_vkiuc"]
+[ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="2_caom4"]
+[ext_resource type="Texture2D" uid="uid://2pgc2fq1vkmd" path="res://sprites/spike.png" id="3_hdfcj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5lb8"]
+texture = ExtResource("3_hdfcj")
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ja74y"]
+sources/0 = SubResource("TileSetAtlasSource_d5lb8")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irmex"]
+size = Vector2(266, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irmex"]
+texture = ExtResource("3_hdfcj")
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_d5lb8"]
+sources/0 = SubResource("TileSetAtlasSource_irmex")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja74y"]
+size = Vector2(115, 20)
+
+[node name="segments" type="Node2D"]
+script = ExtResource("1_vkiuc")
+
+[node name="segment1" type="Node2D" parent="."]
+script = ExtResource("2_caom4")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="segment1"]
+position = Vector2(0, 13)
+tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAA=")
+tile_set = SubResource("TileSet_ja74y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="segment1/TileMapLayer"]
+position = Vector2(0, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="segment1/TileMapLayer/StaticBody2D"]
+position = Vector2(70, -97)
+shape = SubResource("RectangleShape2D_irmex")
+
+[node name="segment2" type="Node2D" parent="."]
+position = Vector2(-112, 14)
+script = ExtResource("2_caom4")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="segment2"]
+tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAD8//7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_d5lb8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="segment2/TileMapLayer"]
+position = Vector2(0, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="segment2/TileMapLayer/StaticBody2D"]
+position = Vector2(-8.5, -98)
+shape = SubResource("RectangleShape2D_ja74y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-73, 3)
+rect = Rect2(-106, -10, 116, 20)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
