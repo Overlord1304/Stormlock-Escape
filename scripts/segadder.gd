@@ -2,40 +2,35 @@ extends Node2D
 
 @onready var segment1 = preload("res://scenes/segments/segment_1.tscn")
 @onready var segment2 = preload("res://scenes/segments/segment_2.tscn")
-var cooldown = 2
-var timer = 0 
-func _process(delta):
+
+var cooldown := 1.5
+var timer := 0.0
+var next_x := 0.0
+const SEGMENT_WIDTH := 269.0
+
+func _ready() -> void:
+	randomize()
+	print("Level generator ready")
+
+func _process(delta: float) -> void:
 	timer += delta
 	if timer >= cooldown:
-		tungsahur()
-		timer = 0 
-func _ready() -> void:
-	randomize() 
+		timer = 0
+		spawn_segment()
 
-func tungsahur():
-	var d = false
-	var rand_value = randi() % 2
-	if d == true:
-		print("hi")
+func spawn_segment() -> void:
+	var scene: PackedScene = segment1 if randi() % 2 == 0 else segment2
+	var new_segment = scene.instantiate()
+	new_segment.position = Vector2(next_x,140) if scene == segment1 else Vector2(next_x,153)
+	next_x += SEGMENT_WIDTH
 
-	if rand_value != 0:
-		
-		var newTile2 = segment2.instantiate() 
-		newTile2.position.x = position.x + 269
-		get_parent().add_child(newTile2)
-		d  = true
-
-
-	elif rand_value == 0:
-		var newTile1 = segment1.instantiate()
-		
-		newTile1.position.x = position.x + 269
-		get_parent().add_child(newTile1)
-
+	get_tree().current_scene.add_child(new_segment)  # add to the main scene
+	print("Spawned segment at X:", new_segment.position.x)
 	
 
 	
 	
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	
 	queue_free() 
