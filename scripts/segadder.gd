@@ -24,7 +24,7 @@ func spawn_segment() -> void:
 	new_segment.position = Vector2(next_x,140) if scene == segment1 else Vector2(next_x,153)
 	next_x += SEGMENT_WIDTH
 
-	get_tree().current_scene.add_child(new_segment)  # add to the main scene
+	get_tree().current_scene.add_child(new_segment)  
 	print("Spawned segment at X:", new_segment.position.x)
 	
 

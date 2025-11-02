@@ -48,10 +48,12 @@ offset_bottom = 53.0
 position = Vector2(228, 112)
 
 [node name="segment1" parent="." instance=ExtResource("7_tipki")]
+visible = false
 position = Vector2(640, 140)
 
 [node name="lvlgen" type="Node2D" parent="."]
 script = ExtResource("9_85g3d")
 
 [node name="segment2" parent="." instance=ExtResource("8_85g3d")]
+visible = false
 position = Vector2(374, 154)

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var ground_scene: PackedScene
-@export var segment_count: int = 10
+@export var segment_count: int = 20
 
 var segments = []
 var segment_width

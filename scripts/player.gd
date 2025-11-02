@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 150.0
 @export var jump_force := -200.0
-@export var jump_hold_force := -800
+@export var jump_hold_force := -799
 @export var gravity := 900.0
 @export var jump_hold_time := 0.25
 @onready var anim := $AnimatedSprite2D
