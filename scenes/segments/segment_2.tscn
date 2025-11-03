@@ -28,9 +28,6 @@ position = Vector2(0, 88)
 position = Vector2(68.5, -98)
 shape = SubResource("RectangleShape2D_0frrk")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="TileMapLayer"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(282, -10)
-rect = Rect2(-106, -10, 116, 20)
-
-[connection signal="screen_entered" from="TileMapLayer/VisibleOnScreenNotifier2D" to="TileMapLayer" method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="TileMapLayer/VisibleOnScreenNotifier2D" to="TileMapLayer" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+rect = Rect2(-106, -10, 25, 20)

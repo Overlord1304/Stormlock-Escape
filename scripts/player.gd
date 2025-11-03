@@ -10,6 +10,8 @@ var jump_done = false
 var is_dead = false
 var jump_timer := 0.0
 var is_jumping := false
+@onready var left = $left
+@onready var right = $right
 func _ready():
 	anim.play("idle")
 func _physics_process(delta):
@@ -24,7 +26,8 @@ func _physics_process(delta):
 	
 	if direction != 0:
 		anim.flip_h = direction < 0
-
+	
+	update_hitboxes()
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = jump_force
@@ -52,7 +55,17 @@ func _physics_process(delta):
 		anim.play("idle")
 	else:
 		anim.play("walk")
-#rip function
+
+func update_hitboxes():
+	if anim.flip_h:
+		
+		left.disabled = false
+		right.disabled = true
+	else:
+		
+		left.disabled = true
+		right.disabled = false
+#rip functions
 func die():
 	if is_dead:
 		return
@@ -65,5 +78,18 @@ func die():
 	anim.play("death")
 	await anim.animation_finished
 
+	
+	get_tree().reload_current_scene()
+func die_to_spike():
+	if is_dead:
+		return
+	is_dead = true
+	
+	velocity = Vector2.ZERO
+	set_process(false)
+	set_physics_process(false)
+	
+	anim.play("death")
+	await anim.animation_finished
 	
 	get_tree().reload_current_scene()

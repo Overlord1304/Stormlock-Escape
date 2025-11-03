@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8m22mdk4lsb"]
+
+[ext_resource type="Script" uid="uid://c7nd6dpr1n4yn" path="res://scripts/spike.gd" id="1_7a7y0"]
+[ext_resource type="Texture2D" uid="uid://2pgc2fq1vkmd" path="res://sprites/spike.png" id="2_d2mqm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cx2lw"]
+texture = ExtResource("2_d2mqm")
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_60m7a"]
+sources/0 = SubResource("TileSetAtlasSource_cx2lw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8th5"]
+size = Vector2(7, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2mqm"]
+size = Vector2(3, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7y0"]
+size = Vector2(3, 6)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_7a7y0")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 15, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_60m7a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(246.5, 110)
+shape = SubResource("RectangleShape2D_b8th5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(246.5, 106.25)
+shape = SubResource("RectangleShape2D_d2mqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(246.5, 109)
+shape = SubResource("RectangleShape2D_7a7y0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

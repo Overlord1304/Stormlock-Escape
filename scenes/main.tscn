@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=8 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://h1nd7n6trqf" path="res://scripts/recyclingground.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://jom0p40tlxoy" path="res://scenes/segments/segment_1.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://ddk7ulhbxjqci" path="res://scenes/segments/segment_2.tscn" id="8_85g3d"]
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
 
 [node name="Node2D" type="Node2D"]
@@ -47,13 +45,5 @@ offset_bottom = 53.0
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(228, 112)
 
-[node name="segment1" parent="." instance=ExtResource("7_tipki")]
-visible = false
-position = Vector2(640, 140)
-
 [node name="lvlgen" type="Node2D" parent="."]
 script = ExtResource("9_85g3d")
-
-[node name="segment2" parent="." instance=ExtResource("8_85g3d")]
-visible = false
-position = Vector2(374, 154)

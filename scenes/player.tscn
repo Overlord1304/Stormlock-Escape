@@ -1,13 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://b46ati8dl6si0"]
+[gd_scene load_steps=39 format=3 uid="uid://b46ati8dl6si0"]
 
 [ext_resource type="Script" uid="uid://cyjqbcgq12gsu" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dnfcevdxtdcaa" path="res://sprites/playersheet-sheet.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cpy6vnyqu0g31" path="res://sprites/death.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://daqo0xka2bm7l" path="res://sprites/playerjump.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://uer0cn4gi6ny" path="res://sprites/walking.png" id="4_fjrip"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
-size = Vector2(7, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_tuyoq")
@@ -242,13 +239,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(12, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(14, 28)
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(63, 0)
 script = ExtResource("1_dqkch")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, 3)
-shape = SubResource("RectangleShape2D_smehm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
@@ -257,5 +256,13 @@ animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="right" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3)
+shape = SubResource("RectangleShape2D_smehm")
+
+[node name="left" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 3)
+shape = SubResource("RectangleShape2D_qlg0r")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
