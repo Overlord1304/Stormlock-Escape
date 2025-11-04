@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cxibmeu87kxoy"]
 
 [ext_resource type="Script" uid="uid://chkubcy5wnqoq" path="res://scripts/storm.gd" id="1_dl58t"]
-[ext_resource type="Texture2D" uid="uid://bquo2v3f2jhw1" path="res://anims/storm.png" id="2_dl58t"]
+[ext_resource type="Texture2D" uid="uid://bquo2v3f2jhw1" path="res://sprites/storm.png" id="2_dl58t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jbef"]
 atlas = ExtResource("2_dl58t")
@@ -59,7 +59,7 @@ size = Vector2(10, 707)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl58t"]
 size = Vector2(401, 675)
 
-[node name="Storm" type="CharacterBody2D"]
+[node name="Storm" type="CharacterBody2D" groups=["storm"]]
 script = ExtResource("1_dl58t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

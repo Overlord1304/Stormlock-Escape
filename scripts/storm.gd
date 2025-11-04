@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed: float =50
+@export var speed: float = 0
 func _ready() -> void:
 	$AnimatedSprite2D.play()
 
@@ -11,3 +11,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D):
 			
 func _physics_process(delta: float):
 	position.x += speed * delta
+func reduce_speed():
+	speed = 75
+func increase_speed():
+	speed = 300

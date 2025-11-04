@@ -11,7 +11,7 @@ texture = ExtResource("2_d2mqm")
 sources/0 = SubResource("TileSetAtlasSource_cx2lw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8th5"]
-size = Vector2(7, 4)
+size = Vector2(5, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2mqm"]
 size = Vector2(3, 2.5)

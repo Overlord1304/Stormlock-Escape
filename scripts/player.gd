@@ -71,6 +71,7 @@ func die():
 		return
 	is_dead=true
 	
+	
 	velocity = Vector2.ZERO
 	set_process(false)
 	set_physics_process(false)
@@ -93,3 +94,14 @@ func die_to_spike():
 	await anim.animation_finished
 	
 	get_tree().reload_current_scene()
+
+
+func _on_stormdetector_body_entered(body: CharacterBody2D):
+	if body.is_in_group("storm"):
+		body.reduce_speed()
+
+
+
+func _on_stormdetector_body_exited(body: CharacterBody2D):
+	if body.is_in_group("storm"):
+		body.increase_speed()
