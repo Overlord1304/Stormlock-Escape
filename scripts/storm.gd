@@ -14,4 +14,4 @@ func _physics_process(delta: float):
 func reduce_speed():
 	speed = 75
 func increase_speed():
-	speed = 300
+	speed = 10000
