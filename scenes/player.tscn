@@ -240,10 +240,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
-size = Vector2(12, 28)
+size = Vector2(12, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(14, 28)
+size = Vector2(14, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
 size = Vector2(951.5, 262)
@@ -261,11 +261,11 @@ animation = &"idle"
 zoom = Vector2(3, 3)
 
 [node name="right" type="CollisionShape2D" parent="."]
-position = Vector2(4, 3)
+position = Vector2(4, 5)
 shape = SubResource("RectangleShape2D_smehm")
 
 [node name="left" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 3)
+position = Vector2(-3, 5)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="stormdetector" type="Area2D" parent="."]

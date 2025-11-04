@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dbon7rv4mdj1q"]
+[gd_scene load_steps=10 format=4 uid="uid://dbon7rv4mdj1q"]
 
 [ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_655fg"]
 [ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_sn0gb"]
@@ -27,14 +27,17 @@ texture_region_size = Vector2i(6, 6)
 tile_size = Vector2i(6, 6)
 sources/0 = SubResource("TileSetAtlasSource_4clqh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0gb"]
+size = Vector2(26.666664, 1.7777777)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slweb"]
-size = Vector2(24.691357, 1.5802457)
+size = Vector2(25.382713, 1.5802457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_655fg"]
 size = Vector2(2.6666677, 6.8148146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5td24"]
-size = Vector2(15.802478, 1.7777786)
+size = Vector2(15.012356, 1.7777786)
 
 [node name="segment2" type="Node2D"]
 position = Vector2(-112.00001, -58)
@@ -115,9 +118,9 @@ position = Vector2(0, 88)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer6/StaticBody2D"]
-position = Vector2(3.9259262, -64)
+position = Vector2(4.0000057, -64)
 scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_slweb")
+shape = SubResource("RectangleShape2D_sn0gb")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="."]
 position = Vector2(46.00001, -5.999998)
@@ -135,7 +138,7 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_slweb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer7/StaticBody2D"]
-position = Vector2(3.8518498, -73.481476)
+position = Vector2(3.037035, -73.481476)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_slweb")
 
@@ -144,7 +147,7 @@ position = Vector2(-14.666669, -37.185184)
 shape = SubResource("RectangleShape2D_655fg")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer7/StaticBody2D"]
-position = Vector2(21.48148, -37.185184)
+position = Vector2(20.888885, -37.185184)
 shape = SubResource("RectangleShape2D_655fg")
 
 [node name="TileMapLayer9" type="TileMapLayer" parent="."]
@@ -163,7 +166,7 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_slweb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
-position = Vector2(3.703702, -73.481476)
+position = Vector2(2.5925932, -73.481476)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_slweb")
 
@@ -208,7 +211,7 @@ position = Vector2(0, 88)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer12/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
+position = Vector2(12.444428, -63.851845)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_5td24")
 
