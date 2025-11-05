@@ -21,22 +21,22 @@ func _process(delta: float) -> void:
 func spawn_segment() -> void:
 	var rand = randi() % 4
 	var new_segment = null
-	if rand == 5:
+	if rand == 0:
 		scene = segment1
 		new_segment = scene.instantiate()
 		SEGMENT_WIDTH = 753
 		new_segment.position = Vector2(next_x,95)
-	elif rand == 6:
+	elif rand == 1:
 		scene = segment2
 		new_segment = scene.instantiate()
 		SEGMENT_WIDTH = 670
 		new_segment.position = Vector2(next_x,69)
-	else:
+	elif rand == 2:
 		scene = segment3
 		new_segment = scene.instantiate()
 		SEGMENT_WIDTH = 577
 		new_segment.position = Vector2(next_x,69)
-	if rand == 8:
+	else:
 		scene = segment4
 		new_segment = scene.instantiate()
 		SEGMENT_WIDTH = 690

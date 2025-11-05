@@ -246,7 +246,7 @@ size = Vector2(12, 24)
 size = Vector2(14, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(951.5, 262)
+size = Vector2(1890, 1289)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(63, 0)
@@ -271,7 +271,7 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="stormdetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stormdetector"]
-position = Vector2(-466.25, -113)
+position = Vector2(3, -626.5)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

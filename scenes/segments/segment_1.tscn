@@ -109,7 +109,7 @@ position = Vector2(-239.11111, -86.22224)
 position = Vector2(-195.55556, -86.22224)
 
 [node name="StaticBody2D17" parent="spikes" instance=ExtResource("3_sp3y7")]
-position = Vector2(-151.11111, -86.22224)
+position = Vector2(-154.22227, -86.22224)
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
 position = Vector2(98.000015, -55.333344)

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity := 900.0
 @export var jump_hold_time := 0.25
 @onready var anim := $AnimatedSprite2D
+var can_move = true
 var jump_done = false
 var is_dead = false
 var jump_timer := 0.0
@@ -15,37 +16,39 @@ var is_jumping := false
 func _ready():
 	anim.play("idle")
 func _physics_process(delta):
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	# Stop player control during countdown
+	if not can_move:
+		# Still apply gravity and keep idle animation
+		move_and_slide()
+		return
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * speed
 
-	
 	if direction != 0:
 		anim.flip_h = direction < 0
-	
+
 	update_hitboxes()
-	
+
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = jump_force
 		is_jumping = true
 		jump_timer = 0.0
-		anim.play("jump")  
+		anim.play("jump")
+
 	if Input.is_action_pressed("ui_up") and is_jumping:
 		jump_timer += delta
 		if jump_timer < jump_hold_time:
-			velocity.y += jump_hold_force * delta 
+			velocity.y += jump_hold_force * delta
 	else:
 		is_jumping = false
 
 	move_and_slide()
 
-	
 	if not is_on_floor():
-		
 		if anim.animation == "jump" and not anim.is_playing():
 			if direction == 0:
 				anim.play("idle")

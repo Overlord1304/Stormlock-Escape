@@ -27,9 +27,11 @@ visible = false
 position = Vector2(-176, 16)
 
 [node name="Storm" parent="." instance=ExtResource("5_tbgi4")]
+z_index = 1
 position = Vector2(43, 256)
 
 [node name="Storm2" parent="." instance=ExtResource("5_tbgi4")]
+z_index = 1
 position = Vector2(44, 55)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -43,7 +45,22 @@ offset_right = 257.5
 offset_bottom = 53.0
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
+z_index = 1
 position = Vector2(228, 112)
 
 [node name="lvlgen" type="Node2D" parent="."]
 script = ExtResource("9_85g3d")
+
+[node name="countdown" type="Node" parent="."]
+
+[node name="CountdownLabel" type="Label" parent="countdown"]
+offset_left = 227.0
+offset_top = 60.0
+offset_right = 267.0
+offset_bottom = 83.0
+
+[node name="CountdownTimer" type="Timer" parent="countdown"]
+
+[node name="Storm3" parent="." instance=ExtResource("5_tbgi4")]
+z_index = 1
+position = Vector2(44, -132)
