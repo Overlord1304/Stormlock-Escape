@@ -19,9 +19,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Stop player control during countdown
+
 	if not can_move:
-		# Still apply gravity and keep idle animation
+	
 		move_and_slide()
 		return
 
