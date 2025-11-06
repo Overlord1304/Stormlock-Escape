@@ -9,22 +9,32 @@ extends CharacterBody2D
 @onready var hunger_bar = $hungerbar/AnimatedSprite2D
 var hunger_timer = 0.0
 var hunger = 8
+
+# --- Jump buffer & coyote time ---
+var jump_buffer_time = 0.1
+var jump_buffer_timer = 0.0
+var coyote_time = 0.1
+var coyote_timer = 0.0
+var is_on_ground = false
+
 var can_move = true
 var jump_done = false
 var is_dead = false
 var jump_timer := 0.0
 var is_jumping := false
+
 @onready var left = $left
 @onready var right = $right
+
 func _ready():
 	anim.play("idle")
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-
+	# Stop movement if needed
 	if not can_move:
-	
 		move_and_slide()
 		return
 
@@ -36,12 +46,29 @@ func _physics_process(delta):
 
 	update_hitboxes()
 
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	# --- Timers ---
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+	if coyote_timer > 0:
+		coyote_timer -= delta
+
+	is_on_ground = is_on_floor()
+	if is_on_ground:
+		coyote_timer = coyote_time
+
+	# --- Jump buffering input ---
+	if Input.is_action_just_pressed("ui_up"):
+		jump_buffer_timer = jump_buffer_time
+
+	# --- Jump conditions ---
+	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = jump_force
 		is_jumping = true
 		jump_timer = 0.0
 		anim.play("jump")
+		jump_buffer_timer = 0.0  # reset buffer after jump
 
+	# --- Variable jump height ---
 	if Input.is_action_pressed("ui_up") and is_jumping:
 		jump_timer += delta
 		if jump_timer < jump_hold_time:
@@ -51,6 +78,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	# --- Animations ---
 	if not is_on_floor():
 		if anim.animation == "jump" and not anim.is_playing():
 			if direction == 0:
@@ -61,65 +89,62 @@ func _physics_process(delta):
 		anim.play("idle")
 	else:
 		anim.play("walk")
+
+	# --- Hunger system ---
 	hunger_timer += delta
-	if hunger_timer > 7.5:  
+	if hunger_timer > 7.5:
 		hunger_timer = 0
 		hunger -= 1
 		hunger = max(hunger, 0)
 		hunger_bar.update_hunger(hunger)
 	if hunger_bar.frame == 7:
 		die_to_spike()
+
+
 func update_hitboxes():
 	if anim.flip_h:
-		
 		left.disabled = false
 		right.disabled = true
 	else:
-		
 		left.disabled = true
 		right.disabled = false
-#rip functions
+
+
+# --- Death ---
 func die():
 	if is_dead:
 		return
-	is_dead=true
-	
-	
+	is_dead = true
 	velocity = Vector2.ZERO
 	set_process(false)
 	set_physics_process(false)
-	
 	anim.play("death")
 	await anim.animation_finished
-
-	
 	get_tree().reload_current_scene()
+
 func die_to_spike():
 	if is_dead:
 		return
 	is_dead = true
-	
 	velocity = Vector2.ZERO
 	set_process(false)
 	set_physics_process(false)
-	
 	anim.play("death")
 	await anim.animation_finished
-	
 	get_tree().reload_current_scene()
 
-#stormspeed
+
+# --- Storm Speed ---
 func _on_stormdetector_body_entered(body):
 	if body.is_in_group("storm"):
 		body.reduce_speed()
-
-
 
 func _on_stormdetector_body_exited(body):
 	if body.is_in_group("storm"):
 		body.increase_speed()
 
-#hunger
+
+# --- Hunger refill ---
 func _on_food_collected():
-	hunger = clamp(hunger + 2,0,8)
+	hunger = clamp(hunger + 2, 0, 8)
 	hunger_bar.update_hunger(hunger)
