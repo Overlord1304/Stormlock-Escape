@@ -1,10 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://b46ati8dl6si0"]
+[gd_scene load_steps=52 format=3 uid="uid://b46ati8dl6si0"]
 
 [ext_resource type="Script" uid="uid://cyjqbcgq12gsu" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dnfcevdxtdcaa" path="res://sprites/playersheet-sheet.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cpy6vnyqu0g31" path="res://sprites/death.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://daqo0xka2bm7l" path="res://sprites/playerjump.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://uer0cn4gi6ny" path="res://sprites/walking.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://h8uw2virlgeu" path="res://sprites/hungbar.png" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://b35fbh62yj3oc" path="res://sprites/Sprite-0002.png" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://xxhd308qekpf" path="res://scripts/hungerbar.gd" id="7_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_tuyoq")
@@ -248,6 +251,70 @@ size = Vector2(14, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
 size = Vector2(1890, 1289)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(0, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(256, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(512, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(768, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(1024, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(1280, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(1536, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("6_tuyoq")
+region = Rect2(1792, 0, 256, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4ail"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(63, 0)
 script = ExtResource("1_dqkch")
@@ -273,6 +340,19 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stormdetector"]
 position = Vector2(3, -626.5)
 shape = SubResource("RectangleShape2D_tuyoq")
+
+[node name="hungerbar" type="Node2D" parent="."]
+position = Vector2(3, -13)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hungerbar"]
+position = Vector2(-17, 112)
+sprite_frames = SubResource("SpriteFrames_i4ail")
+frame_progress = 0.34203237
+script = ExtResource("7_smehm")
+
+[node name="Sprite2D" type="Sprite2D" parent="hungerbar"]
+position = Vector2(-132, 104)
+texture = ExtResource("7_fjrip")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="stormdetector" to="." method="_on_stormdetector_body_entered"]

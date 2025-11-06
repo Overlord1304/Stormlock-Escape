@@ -4,7 +4,7 @@ extends Node2D
 @onready var segment2 = preload("res://scenes/segments/segment_2.tscn")
 @onready var segment3 = preload("res://scenes/segments/segment_3.tscn")
 @onready var segment4 = preload("res://scenes/segments/segment_4.tscn")
-
+@onready var player = $"../player"
 var next_x := 0.0
 var SEGMENT_WIDTH := 700.0
 var segments := []
@@ -34,17 +34,17 @@ func spawn_segment() -> void:
 	match rand:
 		0:
 			scene = segment1
-			SEGMENT_WIDTH = 753.0
+			SEGMENT_WIDTH = 800.0
 			y_pos = 95.0
 		1:
 			scene = segment2
-			SEGMENT_WIDTH = 670.0
+			SEGMENT_WIDTH = 1100.0
 		2:
 			scene = segment3
-			SEGMENT_WIDTH = 577.0
+			SEGMENT_WIDTH = 1175.0
 		3:
 			scene = segment4
-			SEGMENT_WIDTH = 690.0
+			SEGMENT_WIDTH = 850.0
 
 	var new_segment = scene.instantiate()
 	new_segment.global_position = Vector2(next_x, y_pos)
@@ -52,7 +52,9 @@ func spawn_segment() -> void:
 	segments.append(new_segment)
 
 	next_x += SEGMENT_WIDTH
-
+	for food in new_segment.get_tree().get_nodes_in_group("Food"):
+		if not food.is_connected("collected", Callable(player, "_on_food_collected")):
+			food.connect("collected", Callable(player, "_on_food_collected"))
 func cleanup_segments() -> void:
 	if camera == null:
 		return

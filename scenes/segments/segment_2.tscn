@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://ddk7ulhbxjqci"]
+[gd_scene load_steps=13 format=4 uid="uid://ddk7ulhbxjqci"]
 
 [ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_ytqth"]
 [ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_pwiuq"]
 [ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="3_5td24"]
+[ext_resource type="PackedScene" uid="uid://ddb2p8p32lcdq" path="res://scenes/food.tscn" id="4_5td24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v880x"]
 texture = ExtResource("2_pwiuq")
@@ -139,6 +140,37 @@ rotation = 3.1415927
 [node name="StaticBody2D16" parent="spike" instance=ExtResource("3_5td24")]
 position = Vector2(-121.44446, -74.999985)
 
+[node name="StaticBody2D12" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-355.8889, -75.22222)
+
+[node name="StaticBody2D17" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-364.77777, -75.22222)
+
+[node name="StaticBody2D18" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-373.66663, -75.22222)
+
+[node name="StaticBody2D19" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-50.333336, -74.999985)
+
+[node name="StaticBody2D20" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-41.000008, -74.999985)
+
+[node name="StaticBody2D21" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(407.55566, 123.7778)
+rotation = 3.1415927
+
+[node name="StaticBody2D22" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-22.777786, -74.999985)
+
+[node name="StaticBody2D23" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(-5.888893, -74.999985)
+
+[node name="StaticBody2D24" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(20.000011, -94.66669)
+
+[node name="StaticBody2D25" parent="spike" instance=ExtResource("3_5td24")]
+position = Vector2(56.444458, -94.66669)
+
 [node name="TileMapLayer5" type="TileMapLayer" parent="."]
 position = Vector2(-86, -24)
 scale = Vector2(1.5, 1.5)
@@ -198,3 +230,22 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(12.148132, -63.851845)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_5td24")
+
+[node name="TileMapLayer9" type="TileMapLayer" parent="."]
+position = Vector2(418.6667, 41)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAD8//7/AAABAAQAAAD9//7/AAACAAEAADD+//7/AAACAAQAAAD///7/AAACAAEAADAAAP7/AAACAAMAADABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer9"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
+position = Vector2(3.9259262, -64.296295)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_slweb")
+
+[node name="Node2D" parent="." instance=ExtResource("4_5td24")]
+position = Vector2(-111.333336, -48)
+scale = Vector2(0.5, 0.5)

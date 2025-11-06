@@ -4,7 +4,7 @@ extends CharacterBody2D
 func _ready() -> void:
 	$AnimatedSprite2D.play()
 
-func _on_area_2d_body_entered(body: CharacterBody2D):
+func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		body.die()
 

@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var gravity := 900.0
 @export var jump_hold_time := 0.25
 @onready var anim := $AnimatedSprite2D
+@onready var hunger_bar = $hungerbar/AnimatedSprite2D
+var hunger_timer = 0.0
+var hunger = 8
 var can_move = true
 var jump_done = false
 var is_dead = false
@@ -58,7 +61,14 @@ func _physics_process(delta):
 		anim.play("idle")
 	else:
 		anim.play("walk")
-
+	hunger_timer += delta
+	if hunger_timer > 7.5:  
+		hunger_timer = 0
+		hunger -= 1
+		hunger = max(hunger, 0)
+		hunger_bar.update_hunger(hunger)
+	if hunger_bar.frame == 7:
+		die_to_spike()
 func update_hitboxes():
 	if anim.flip_h:
 		
@@ -98,13 +108,18 @@ func die_to_spike():
 	
 	get_tree().reload_current_scene()
 
-
-func _on_stormdetector_body_entered(body: CharacterBody2D):
+#stormspeed
+func _on_stormdetector_body_entered(body):
 	if body.is_in_group("storm"):
 		body.reduce_speed()
 
 
 
-func _on_stormdetector_body_exited(body: CharacterBody2D):
+func _on_stormdetector_body_exited(body):
 	if body.is_in_group("storm"):
 		body.increase_speed()
+
+#hunger
+func _on_food_collected():
+	hunger = clamp(hunger + 2,0,8)
+	hunger_bar.update_hunger(hunger)

@@ -22,9 +22,9 @@ Global="*res://scripts/global.gd"
 [display]
 
 window/size/viewport_width=880
-window/size/viewport_height=720
+window/size/viewport_height=670
 window/size/window_width_override=880
-window/size/window_height_override=720
+window/size/window_height_override=670
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -35,6 +35,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 player=""
 storm=""
+Food=""
 
 [rendering]
 

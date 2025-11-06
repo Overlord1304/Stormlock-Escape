@@ -29,10 +29,12 @@ position = Vector2(-176, 16)
 [node name="Storm" parent="." instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(43, 256)
+speed = null
 
 [node name="Storm2" parent="." instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, 55)
+speed = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(230, 0)
@@ -64,3 +66,4 @@ offset_bottom = 83.0
 [node name="Storm3" parent="." instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, -132)
+speed = null
