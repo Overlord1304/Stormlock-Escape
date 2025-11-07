@@ -38,8 +38,9 @@ func spawn_player(position: Vector2):
 		player.get_node("Camera2D").current = true
 func _process(delta):
 	if not game_over:
-		score += delta * 10
+		score += delta * 25
 		score_label.text = "Score: " + str(int(score))
-
+	
+		
 func on_player_died():
 	game_over = true

@@ -10,7 +10,7 @@ extends CharacterBody2D
 var hunger_timer = 0.0
 var hunger = 8
 
-# --- Jump buffer & coyote time ---
+
 var jump_buffer_time = 0.1
 var jump_buffer_timer = 0.0
 var coyote_time = 0.1
@@ -33,7 +33,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Stop movement if needed
+	
 	if not can_move:
 		move_and_slide()
 		return
@@ -44,9 +44,9 @@ func _physics_process(delta):
 	if direction != 0:
 		anim.flip_h = direction < 0
 
-	update_hitboxes()
+	
 
-	# --- Timers ---
+	# coyote and jump buffer
 	if jump_buffer_timer > 0:
 		jump_buffer_timer -= delta
 	if coyote_timer > 0:
@@ -56,19 +56,19 @@ func _physics_process(delta):
 	if is_on_ground:
 		coyote_timer = coyote_time
 
-	# --- Jump buffering input ---
+
 	if Input.is_action_just_pressed("ui_up"):
 		jump_buffer_timer = jump_buffer_time
 
-	# --- Jump conditions ---
+
 	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = jump_force
 		is_jumping = true
 		jump_timer = 0.0
 		anim.play("jump")
-		jump_buffer_timer = 0.0  # reset buffer after jump
+		jump_buffer_timer = 0.0  
 
-	# --- Variable jump height ---
+	
 	if Input.is_action_pressed("ui_up") and is_jumping:
 		jump_timer += delta
 		if jump_timer < jump_hold_time:
@@ -78,7 +78,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# --- Animations ---
+	#anims
 	if not is_on_floor():
 		if anim.animation == "jump" and not anim.is_playing():
 			if direction == 0:
@@ -90,7 +90,7 @@ func _physics_process(delta):
 	else:
 		anim.play("walk")
 
-	# --- Hunger system ---
+	#hunger sys
 	hunger_timer += delta
 	if hunger_timer > 7.5:
 		hunger_timer = 0
@@ -101,16 +101,10 @@ func _physics_process(delta):
 		die_to_spike()
 
 
-func update_hitboxes():
-	if anim.flip_h:
-		left.disabled = false
-		right.disabled = true
-	else:
-		left.disabled = true
-		right.disabled = false
 
 
-# --- Death ---
+
+# rip functions
 func die():
 	if is_dead:
 		return
@@ -134,7 +128,7 @@ func die_to_spike():
 	get_tree().reload_current_scene()
 
 
-# --- Storm Speed ---
+#storm
 func _on_stormdetector_body_entered(body):
 	if body.is_in_group("storm"):
 		body.reduce_speed()
@@ -144,7 +138,11 @@ func _on_stormdetector_body_exited(body):
 		body.increase_speed()
 
 
-# --- Hunger refill ---
+#hunger
 func _on_food_collected():
 	hunger = clamp(hunger + 2, 0, 8)
 	hunger_bar.update_hunger(hunger)
+
+#spring
+func bounce():
+	velocity.y = -500

@@ -48,7 +48,7 @@ offset_bottom = 53.0
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
 z_index = 1
-position = Vector2(228, 112)
+position = Vector2(226, 112)
 
 [node name="lvlgen" type="Node2D" parent="."]
 script = ExtResource("9_85g3d")
