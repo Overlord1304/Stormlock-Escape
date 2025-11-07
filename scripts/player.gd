@@ -23,8 +23,7 @@ var is_dead = false
 var jump_timer := 0.0
 var is_jumping := false
 
-@onready var left = $left
-@onready var right = $right
+
 
 func _ready():
 	anim.play("idle")
