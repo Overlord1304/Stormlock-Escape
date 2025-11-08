@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=9 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tefeu")
@@ -37,7 +39,7 @@ offset_right = 257.5
 offset_bottom = 53.0
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
-z_index = 1
+z_index = 2
 position = Vector2(727, 112)
 
 [node name="lvlgen" type="Node2D" parent="."]
@@ -70,3 +72,11 @@ speed = null
 z_index = 1
 position = Vector2(43, 256)
 speed = null
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_tipki")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

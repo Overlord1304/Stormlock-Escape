@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed := 150.0
-@export var jump_force := -200.0
-@export var jump_hold_force := -799
+@export var jump_force := -150.0
+@export var jump_hold_force := -1100
 @export var gravity := 900.0
 @export var jump_hold_time := 0.25
 @onready var anim := $AnimatedSprite2D
@@ -26,6 +26,7 @@ var is_jumping := false
 
 
 func _ready():
+	Global.player_died = false
 	anim.play("idle")
 
 func _physics_process(delta):
@@ -105,6 +106,7 @@ func _physics_process(delta):
 
 # rip functions
 func die():
+	Global.player_died = true
 	if is_dead:
 		return
 	is_dead = true
@@ -116,6 +118,7 @@ func die():
 	get_tree().reload_current_scene()
 
 func die_to_spike():
+	Global.player_died = true
 	if is_dead:
 		return
 	is_dead = true

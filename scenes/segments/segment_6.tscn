@@ -123,7 +123,7 @@ position = Vector2(241.33339, -0.66666794)
 [node name="TileMapLayer12" type="TileMapLayer" parent="."]
 position = Vector2(252.00002, -8.666668)
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAD+//n/AAABAAQAAGD+//j/AAADAAIAADD+//f/AAADAAIAADD+//b/AAADAAIAADD+//X/AAADAAIAADD+//T/AAADAAIAADD+//P/AAADAAIAADD+//L/AAADAAIAADD+//H/AAADAAIAADD+//D/AAADAAIAADD+/+//AAADAAQAAGAHAPn/AAADAAQAAFAHAPj/AAADAAIAAAAHAPf/AAADAAIAAAAHAPb/AAADAAIAAAAHAPX/AAADAAIAAAAHAPT/AAADAAIAAAAHAPP/AAADAAIAAAAHAPL/AAADAAIAAAAHAPH/AAADAAIAAAAHAPD/AAADAAIAAAAHAO//AAABAAQAAFAEAPn/AAABAAQAAAAFAPn/AAADAAQAAAABAPb/AAADAAQAAAAAAPb/AAABAAQAAAAEAPP/AAABAAQAAAAFAPP/AAADAAQAAAA=")
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAD+//n/AAABAAQAAGD+//j/AAADAAIAADD+//f/AAADAAIAADD+//b/AAADAAIAADD+//X/AAADAAIAADD+//T/AAADAAIAADD+//P/AAADAAIAADD+//L/AAADAAIAADD+//H/AAADAAIAADD+//D/AAADAAIAADD+/+//AAADAAQAAGAHAPn/AAADAAQAAFAHAPj/AAADAAIAAAAHAPf/AAADAAIAAAAHAPb/AAADAAIAAAAHAPX/AAADAAIAAAAHAPT/AAADAAIAAAAHAPP/AAADAAIAAAAHAPL/AAADAAIAAAAHAPH/AAADAAIAAAAHAPD/AAADAAIAAAAHAO//AAABAAQAAFAEAPP/AAABAAQAAAAFAPP/AAADAAQAAAA=")
 tile_set = SubResource("TileSet_4a80a")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer12"]
@@ -320,27 +320,8 @@ position = Vector2(-356.667, -74.667)
 [node name="StaticBody2D2" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
 position = Vector2(-347.33356, -74.667)
 
-[node name="StaticBody2D3" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-338.00015, -74.667)
-
-[node name="StaticBody2D4" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-328.66675, -74.667)
-
-[node name="StaticBody2D5" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-319.33337, -74.667)
-
-[node name="StaticBody2D6" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-310.00003, -74.667)
-
-[node name="StaticBody2D8" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-415.11108, -122.222206)
-
 [node name="StaticBody2D9" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
 position = Vector2(-426.66656, -122.222206)
-
-[node name="StaticBody2D10" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-92.888794, -287.1111)
-rotation = 1.5707964
 
 [node name="StaticBody2D11" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
 position = Vector2(-92.44437, -306.22223)
@@ -390,10 +371,6 @@ rotation = -1.5707964
 position = Vector2(-268.44437, 179.11113)
 rotation = -1.5707964
 
-[node name="StaticBody2D29" parent="spikes/spikes4/spikes2" instance=ExtResource("3_dkoas")]
-position = Vector2(-268.44437, 205.77774)
-rotation = -1.5707964
-
 [node name="spikes3" type="Node2D" parent="spikes/spikes4"]
 position = Vector2(207.99994, 0)
 
@@ -402,12 +379,6 @@ position = Vector2(-498.00027, -89.77803)
 
 [node name="StaticBody2D8" parent="spikes/spikes4/spikes3" instance=ExtResource("3_dkoas")]
 position = Vector2(-510.22208, -89.777725)
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("6_lwudr")]
-position = Vector2(299.33334, -83.33333)
-
-[node name="StaticBody2D8" parent="." instance=ExtResource("6_lwudr")]
-position = Vector2(263.33337, -110.666664)
 
 [node name="StaticBody2D9" parent="." instance=ExtResource("6_lwudr")]
 position = Vector2(300, -138)

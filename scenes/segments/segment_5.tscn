@@ -331,7 +331,7 @@ position = Vector2(32, -14.66666)
 scale = Vector2(0.5, 0.5)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_xcay8")]
-position = Vector2(-28.666664, 40)
+position = Vector2(141.33334, 27.333332)
 
 [node name="TileMapLayer10" type="TileMapLayer" parent="."]
 position = Vector2(-55.999985, -61.333336)
