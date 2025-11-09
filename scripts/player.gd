@@ -23,8 +23,6 @@ var is_dead = false
 var jump_timer := 0.0
 var is_jumping := false
 
-
-
 func _ready():
 	Global.player_died = false
 	anim.play("idle")

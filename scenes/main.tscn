@@ -48,9 +48,9 @@ script = ExtResource("9_85g3d")
 [node name="countdown" type="Node" parent="."]
 
 [node name="CountdownLabel" type="Label" parent="countdown"]
-offset_left = 715.0
+offset_left = 730.0
 offset_top = 63.0
-offset_right = 755.0
+offset_right = 770.0
 offset_bottom = 86.0
 
 [node name="CountdownTimer" type="Timer" parent="countdown"]
