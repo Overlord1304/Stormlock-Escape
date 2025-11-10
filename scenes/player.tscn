@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b46ati8dl6si0"]
+[gd_scene load_steps=50 format=3 uid="uid://b46ati8dl6si0"]
 
 [ext_resource type="Script" uid="uid://cyjqbcgq12gsu" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cpy6vnyqu0g31" path="res://sprites/death.png" id="2_tuyoq"]
@@ -105,10 +105,6 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("4_ur7pv")
 region = Rect2(352, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2b1d"]
-atlas = ExtResource("4_ur7pv")
-region = Rect2(384, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("5_y4r1p")
 region = Rect2(0, 0, 32, 32)
@@ -213,13 +209,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t4otl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j2b1d")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 40.0
+"speed": 75.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -319,7 +312,7 @@ script = ExtResource("1_dqkch")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, 2)
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"death"
+animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

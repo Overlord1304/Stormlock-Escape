@@ -1,14 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=12 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://c1ih35j0saddb" path="res://scenes/parallax.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://h1nd7n6trqf" path="res://scripts/recyclingground.gd" id="4_jyhfs"]
+[ext_resource type="FontFile" uid="uid://dp8n25op4qny" path="res://font/pixelsans/PixeloidSansBold-OG894.ttf" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
+[ext_resource type="FontFile" uid="uid://hlim3k3hnfla" path="res://font/pixelsans/PixeloidSans-E40en.ttf" id="9_ya4ey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
+
+[sub_resource type="FontVariation" id="FontVariation_ya4ey"]
+fallbacks = Array[Font]([ExtResource("9_ya4ey")])
+base_font = ExtResource("5_85g3d")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tefeu")
@@ -37,6 +43,10 @@ transform = Transform2D(2, 0, 0, 2, 230, 0)
 offset_left = 73.5
 offset_right = 257.5
 offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 0.8, 0.5529412, 1)
+theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_85g3d")
 
 [node name="player" parent="." instance=ExtResource("6_tefeu")]
 z_index = 2
@@ -48,10 +58,15 @@ script = ExtResource("9_85g3d")
 [node name="countdown" type="Node" parent="."]
 
 [node name="CountdownLabel" type="Label" parent="countdown"]
-offset_left = 730.0
+offset_left = 717.0
 offset_top = 63.0
-offset_right = 770.0
+offset_right = 757.0
 offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.99999994, 0.8016892, 0.5534327, 1)
+theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_85g3d")
+horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="countdown"]
 
@@ -90,3 +105,7 @@ offset_left = -267.0
 offset_top = 6.0
 offset_right = -227.0
 offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0.8, 0.5529412, 1)
+theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_ya4ey")

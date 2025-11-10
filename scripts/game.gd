@@ -44,6 +44,8 @@ func _process(delta):
 		check_high_score()
 		score_label.text = "Score: " + str(int(score))
 		high_score_label.text = "High Score: %d" % high_score
+	if Global.player_died:
+		save_high_score()
 func load_high_score():
 	var save_path = "user://saves.save"
 	if FileAccess.file_exists(save_path):
@@ -54,7 +56,7 @@ func load_high_score():
 func check_high_score():
 	if score > high_score:
 		high_score = score
-		save_high_score()
+		
 func save_high_score():
 	var save_path = "user://saves.save"
 	var file  = FileAccess.open(save_path,FileAccess.WRITE)
