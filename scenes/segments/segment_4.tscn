@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://dw6sn0ml3bwit"]
+[gd_scene load_steps=14 format=4 uid="uid://dw6sn0ml3bwit"]
 
 [ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_la0s3"]
 [ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_3e1m0"]
 [ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="3_qpqcp"]
 [ext_resource type="PackedScene" uid="uid://ddb2p8p32lcdq" path="res://scenes/food.tscn" id="4_3e1m0"]
+[ext_resource type="PackedScene" uid="uid://qhpp4r3qvdd1" path="res://scenes/slime.tscn" id="5_qpqcp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v880x"]
 texture = ExtResource("2_3e1m0")
@@ -273,3 +274,6 @@ shape = SubResource("RectangleShape2D_5td24")
 [node name="Node2D" parent="." instance=ExtResource("4_3e1m0")]
 position = Vector2(168.66666, -86.666664)
 scale = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_qpqcp")]
+position = Vector2(-172.66667, -2)

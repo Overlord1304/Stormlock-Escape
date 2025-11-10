@@ -108,8 +108,8 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
 size = Vector2(17, 4.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n6pvg"]
-radius = 160.00313
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(296, 86)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_n6pvg")
@@ -132,7 +132,9 @@ shape = SubResource("RectangleShape2D_n6pvg")
 [node name="detectionzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionzone"]
-shape = SubResource("CircleShape2D_n6pvg")
+position = Vector2(2, -33)
+shape = SubResource("RectangleShape2D_pjw23")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="detectionzone" to="." method="_on_detectionzone_body_entered"]
+[connection signal="body_exited" from="detectionzone" to="." method="_on_detectionzone_body_exited"]
