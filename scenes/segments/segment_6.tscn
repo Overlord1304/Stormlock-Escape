@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://cwx58wjeujp6g"]
+[gd_scene load_steps=10 format=4 uid="uid://cwx58wjeujp6g"]
 
 [ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_nao1w"]
 [ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_jyu11"]
 [ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="3_dkoas"]
 [ext_resource type="PackedScene" uid="uid://ddb2p8p32lcdq" path="res://scenes/food.tscn" id="4_q1g41"]
 [ext_resource type="PackedScene" uid="uid://csw4i03ojyj6d" path="res://scenes/spring.tscn" id="6_lwudr"]
-[ext_resource type="PackedScene" uid="uid://qhpp4r3qvdd1" path="res://scenes/slime.tscn" id="6_nao1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4clqh"]
 texture = ExtResource("2_jyu11")
@@ -383,6 +382,3 @@ position = Vector2(-510.22208, -89.777725)
 
 [node name="StaticBody2D9" parent="." instance=ExtResource("6_lwudr")]
 position = Vector2(300, -138)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_nao1w")]
-position = Vector2(-152, 7.3333335)

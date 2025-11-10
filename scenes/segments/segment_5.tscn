@@ -94,9 +94,6 @@ shape = SubResource("RectangleShape2D_lgqqh")
 [node name="spike" type="Node2D" parent="."]
 scale = Vector2(1.5, 1.5)
 
-[node name="StaticBody2D" parent="spike" instance=ExtResource("3_qfivq")]
-position = Vector2(-251.11118, -114.66661)
-
 [node name="StaticBody2D2" parent="spike" instance=ExtResource("3_qfivq")]
 position = Vector2(-200.11113, -114.66666)
 
@@ -235,6 +232,9 @@ position = Vector2(-38.666634, -74.666664)
 
 [node name="StaticBody2D17" parent="spike" instance=ExtResource("3_qfivq")]
 position = Vector2(-29.77774, -74.666664)
+
+[node name="StaticBody2D40" parent="spike" instance=ExtResource("3_qfivq")]
+position = Vector2(-296, -95.11112)
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="."]
 position = Vector2(-86, -24)

@@ -5,6 +5,7 @@ extends CharacterBody2D
 var direction
 var player
 var detected = false
+var is_dead = false
 func _ready():
 	anim.play("idle")
 	player = get_tree().get_first_node_in_group("player")
@@ -24,8 +25,17 @@ func _process(_float):
 		anim.play("walk")
 		direction = (player.global_position.x - self.global_position.x)
 		velocity.x = direction * speed
-		print("lkewjlke")
-	
+		
+func die_to_spike():
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	set_process(false)
+	set_physics_process(false)
+	anim.play("idle")
+	await anim.animation_finished
+	get_tree().reload_current_scene()
 func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		body.die_to_spike()
