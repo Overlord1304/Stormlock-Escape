@@ -36,27 +36,27 @@ func spawn_segment() -> void:
 	var y_pos := 69.0
 	
 	match rand:
-		15:
+		0:
 			scene = segment1
 			SEGMENT_WIDTH = 900.0
 			y_pos = 95.0
-		14:
+		1:
 			scene = segment2
 			SEGMENT_WIDTH = 1200.0
-		12:
+		2:
 			scene = segment3
 			SEGMENT_WIDTH = 1275.0
-		13:
+		3:
 			scene = segment4
 			SEGMENT_WIDTH = 950.0
-		0,1,2,3,4,5,6:
+		4:
 			scene = segment5 
 			SEGMENT_WIDTH = 900.0
-		12:
+		5:
 			scene = segment6
 			SEGMENT_WIDTH = 1100.0
 			y_pos = 81.0
-		11:
+		6:
 			scene = segment7
 			SEGMENT_WIDTH = 900.0
 			y_pos = 81.0

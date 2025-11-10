@@ -1,9 +1,10 @@
 extends Node
 
 var score: float = 0.0
-
+var high_score: float = 0.0
 
 @onready var score_label = $CanvasLayer/ScoreLabel
+@onready var high_score_label =$CanvasLayer2/highscore
 @onready var countdown_label = $countdown/CountdownLabel
 @onready var player = $player
 
@@ -15,6 +16,7 @@ func _ready():
 	player.can_move = false
 	start_countdown()
 	Global.storm_can_move = false
+	load_high_score()
 func start_countdown():
 	countdown_label.show()
 
@@ -39,6 +41,22 @@ func spawn_player(position: Vector2):
 func _process(delta):
 	if not Global.player_died and not countdown_active:
 		score += delta * 25
+		check_high_score()
 		score_label.text = "Score: " + str(int(score))
+		high_score_label.text = "High Score: %d" % high_score
+func load_high_score():
+	var save_path = "user://saves.save"
+	if FileAccess.file_exists(save_path):
+		var file  = FileAccess.open(save_path,FileAccess.READ)
+		high_score = int(file.get_as_text())
+		file.close()
 	
-		
+func check_high_score():
+	if score > high_score:
+		high_score = score
+		save_high_score()
+func save_high_score():
+	var save_path = "user://saves.save"
+	var file  = FileAccess.open(save_path,FileAccess.WRITE)
+	file.store_string(str(high_score))
+	file.close()
