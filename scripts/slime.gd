@@ -26,16 +26,7 @@ func _process(_float):
 		direction = (player.global_position.x - self.global_position.x)
 		velocity.x = direction * speed
 		
-func die_to_spike():
-	if is_dead:
-		return
-	is_dead = true
-	velocity = Vector2.ZERO
-	set_process(false)
-	set_physics_process(false)
-	anim.play("idle")
-	await anim.animation_finished
-	get_tree().reload_current_scene()
+
 func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		body.die_to_spike()
@@ -50,3 +41,13 @@ func _on_detectionzone_body_entered(body) -> void:
 func _on_detectionzone_body_exited(body) -> void:
 	if body.is_in_group("player"):
 		detected = false
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	set_process(false)
+	set_physics_process(false)
+	anim.play("death")
+	await anim.animation_finished
+	self.queue_free()
