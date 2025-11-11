@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=15 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
@@ -11,20 +11,26 @@
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
 [ext_resource type="FontFile" uid="uid://hlim3k3hnfla" path="res://font/pixelsans/PixeloidSans-E40en.ttf" id="9_ya4ey"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_85g3d"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya4ey"]
 shader = ExtResource("8_choun")
-shader_parameter/saturation = 0.6730000319675
+shader_parameter/saturation = 2.582000122645
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85g3d"]
 
 [sub_resource type="FontVariation" id="FontVariation_ya4ey"]
 fallbacks = Array[Font]([ExtResource("9_ya4ey")])
 base_font = ExtResource("5_85g3d")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_choun"]
+shader = ExtResource("8_choun")
+shader_parameter/saturation = 0.2800000133
+
 [node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_ya4ey")
 script = ExtResource("1_tefeu")
 
 [node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
+use_parent_material = true
 position = Vector2(-980, -324)
 
 [node name="GroundContainer" type="Node2D" parent="."]
@@ -91,19 +97,6 @@ z_index = 1
 material = SubResource("ShaderMaterial_85g3d")
 position = Vector2(43, 256)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_tipki")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 366.0
-offset_top = -368.0
-offset_right = 1366.0
-offset_bottom = 632.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 offset = Vector2(300, 0)
 transform = Transform2D(1, 0, 0, 1, 300, 0)
@@ -117,3 +110,11 @@ theme_override_colors/font_color = Color(1, 0.8, 0.5529412, 1)
 theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("FontVariation_ya4ey")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_choun")
+offset_left = -558.0
+offset_top = -263.0
+offset_right = 189.0
+offset_bottom = 204.0
+color = Color(1, 0.23529412, 1, 0)

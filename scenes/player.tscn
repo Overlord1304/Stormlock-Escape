@@ -1,13 +1,18 @@
-[gd_scene load_steps=50 format=3 uid="uid://b46ati8dl6si0"]
+[gd_scene load_steps=53 format=3 uid="uid://b46ati8dl6si0"]
 
 [ext_resource type="Script" uid="uid://cyjqbcgq12gsu" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cpy6vnyqu0g31" path="res://sprites/death.png" id="2_tuyoq"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="2_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://52en8n4g1ang" path="res://sprites/idle-sheet.png" id="3_smehm"]
 [ext_resource type="Texture2D" uid="uid://il544cgd3mtl" path="res://sprites/playerjump-sheet.png" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://c1a1c0jbxpkoa" path="res://sprites/walking-sheet.png" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://h8uw2virlgeu" path="res://sprites/hungbar.png" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://b35fbh62yj3oc" path="res://sprites/Sprite-0002.png" id="7_fjrip"]
 [ext_resource type="Script" uid="uid://xxhd308qekpf" path="res://scripts/hungerbar.gd" id="7_smehm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4r1p"]
+shader = ExtResource("2_ur7pv")
+shader_parameter/saturation = 1.5450000733875
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_tuyoq")
@@ -241,6 +246,10 @@ size = Vector2(10, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
 size = Vector2(1949, 1289)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ur7pv"]
+shader = ExtResource("2_ur7pv")
+shader_parameter/saturation = 1.5450000733875
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("6_tuyoq")
 region = Rect2(0, 0, 256, 16)
@@ -310,6 +319,7 @@ position = Vector2(63, 0)
 script = ExtResource("1_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_y4r1p")
 position = Vector2(7, 2)
 sprite_frames = SubResource("SpriteFrames_ur7pv")
 animation = &"jump"
@@ -331,6 +341,7 @@ shape = SubResource("RectangleShape2D_tuyoq")
 position = Vector2(3, -13)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hungerbar"]
+material = SubResource("ShaderMaterial_ur7pv")
 position = Vector2(-17, 112)
 sprite_frames = SubResource("SpriteFrames_i4ail")
 frame_progress = 0.34203237
