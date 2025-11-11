@@ -96,7 +96,7 @@ func _physics_process(delta):
 		hunger = max(hunger, 0)
 		hunger_bar.update_hunger(hunger)
 	if hunger_bar.frame == 7:
-		die_to_spike()
+		die_to_slime()
 
 
 
@@ -115,7 +115,7 @@ func die():
 	await anim.animation_finished
 	get_tree().reload_current_scene()
 
-func die_to_spike():
+func die_to_slime():
 	Global.player_died = true
 	if is_dead:
 		return
@@ -123,7 +123,7 @@ func die_to_spike():
 	velocity = Vector2.ZERO
 	set_process(false)
 	set_physics_process(false)
-	anim.play("death")
+	anim.play("slimedeath")
 	await anim.animation_finished
 	get_tree().reload_current_scene()
 
