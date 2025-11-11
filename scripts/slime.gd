@@ -24,7 +24,10 @@ func _process(_float):
 	if detected:
 		anim.play("walk")
 		direction = (player.global_position.x - self.global_position.x)
-		velocity.x = direction * speed
+		var dir_sign = sign(direction)
+		var distance = abs(direction)
+		
+		velocity.x = dir_sign * (speed*distance+50)
 		
 
 func _on_area_2d_body_entered(body) -> void:

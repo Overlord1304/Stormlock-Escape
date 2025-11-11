@@ -181,7 +181,7 @@ position = Vector2(144.14813, -59.85187)
 shape = SubResource("RectangleShape2D_k15rg")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("6_dlbem")]
-position = Vector2(251.33333, -61.333332)
+position = Vector2(294, -59.333332)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("6_dlbem")]
-position = Vector2(180.66667, -101.33333)
+position = Vector2(162, -95.99999)

@@ -117,7 +117,7 @@ height = 22.0
 size = Vector2(17, 4.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
-size = Vector2(189, 86)
+size = Vector2(108, 63)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["slime"]]
 script = ExtResource("1_n6pvg")
@@ -140,7 +140,7 @@ shape = SubResource("RectangleShape2D_n6pvg")
 [node name="detectionzone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionzone"]
-position = Vector2(1.5, -33)
+position = Vector2(5, -21.5)
 shape = SubResource("RectangleShape2D_pjw23")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_area_2d_body_entered"]
