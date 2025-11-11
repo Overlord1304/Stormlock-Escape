@@ -7,6 +7,7 @@ extends Node2D
 @onready var segment5 = preload("res://scenes/segments/segment_5.tscn")
 @onready var segment6 = preload("res://scenes/segments/segment_6.tscn")
 @onready var segment7 = preload("res://scenes/segments/segment_7.tscn")
+@onready var segment8 = preload("res://scenes/segments/segment_8.tscn")
 @onready var player = $"../player"
 
 var next_x := 0.0
@@ -31,34 +32,38 @@ func _process(_delta: float) -> void:
 	check_and_spawn()
 
 func spawn_segment() -> void:
-	var rand = randi() % 14
+	var rand = randi() % 16
 	var scene : PackedScene
 	var y_pos := 69.0
 	
 	match rand:
-		134:
+		17:
 			scene = segment1
 			SEGMENT_WIDTH = 900.0
 			y_pos = 95.0
 		345:
 			scene = segment2
 			SEGMENT_WIDTH = 1200.0
-		34:
+		678:
 			scene = segment3
 			SEGMENT_WIDTH = 1275.0
-		17:
+		91011:
 			scene = segment4
 			SEGMENT_WIDTH = 950.0
-		16:
+		122:
 			scene = segment5 
 			SEGMENT_WIDTH = 900.0
-		15:
+		132:
 			scene = segment6
 			SEGMENT_WIDTH = 1100.0
 			y_pos = 81.0
-		0,1,2,3,4,5,6,7,8,9,10,11,12,13,14:
+		142:
 			scene = segment7
 			SEGMENT_WIDTH = 900.0
+			y_pos = 81.0
+		0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15:
+			scene = segment8
+			SEGMENT_WIDTH = 850.0
 			y_pos = 81.0
 	var new_segment = scene.instantiate()
 	new_segment.global_position = Vector2(next_x, y_pos)

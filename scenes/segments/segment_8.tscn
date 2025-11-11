@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://jn745xpa1txt"]
+[gd_scene load_steps=14 format=4 uid="uid://jn745xpa1txt"]
 
 [ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_21nby"]
 [ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_07cdk"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="5_cnnn8"]
 [ext_resource type="PackedScene" uid="uid://qhpp4r3qvdd1" path="res://scenes/slime.tscn" id="6_dlbem"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4clqh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21nby"]
 texture = ExtResource("2_07cdk")
 texture_region_size = Vector2i(6, 6)
 0:0/0 = 0
@@ -26,15 +26,24 @@ texture_region_size = Vector2i(6, 6)
 3:1/0 = 0
 2:1/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_4a80a"]
+[sub_resource type="TileSet" id="TileSet_07cdk"]
 tile_size = Vector2i(6, 6)
-sources/0 = SubResource("TileSetAtlasSource_4clqh")
+sources/0 = SubResource("TileSetAtlasSource_21nby")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5td24"]
-size = Vector2(15.802478, 1.7777786)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xntk2"]
+size = Vector2(1.7777779, 13.234573)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dihl"]
-size = Vector2(12.148151, 2.2962952)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oeycs"]
+size = Vector2(18.22221, 4.4444647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnnn8"]
+size = Vector2(32.259247, 3.0740833)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlbem"]
+size = Vector2(23.999987, 3.2592602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k15rg"]
+size = Vector2(32.296295, 2.370379)
 
 [node name="segment2" type="Node2D"]
 position = Vector2(100, 4)
@@ -45,111 +54,18 @@ script = ExtResource("1_21nby")
 position = Vector2(282, -10)
 rect = Rect2(-106, -10, 25, 20)
 
-[node name="TileMapLayer8" type="TileMapLayer" parent="."]
-position = Vector2(-103.33331, 29.333347)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
-tile_set = SubResource("TileSet_4a80a")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer8"]
-position = Vector2(0, 88)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_5td24")
-
-[node name="TileMapLayer9" type="TileMapLayer" parent="."]
-position = Vector2(100, 28.666336)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAAFAPj/AAABAAQAAAAGAPj/AAACAAQAAAAHAPj/AAADAAQAAAD///X/AAABAAQAAAAAAPX/AAACAAQAAAABAPX/AAADAAQAAAAFAPL/AAABAAQAAAAGAPL/AAACAAQAAAAHAPL/AAADAAQAAAA=")
-tile_set = SubResource("TileSet_4a80a")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer9"]
-position = Vector2(0, 88)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_5td24")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
-position = Vector2(26.222221, -88.03689)
-shape = SubResource("RectangleShape2D_1dihl")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
-position = Vector2(1.9259338, -100.18503)
-shape = SubResource("RectangleShape2D_1dihl")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
-position = Vector2(26.222237, -112.036896)
-shape = SubResource("RectangleShape2D_1dihl")
-
 [node name="Node2D" parent="." instance=ExtResource("3_xntk2")]
-position = Vector2(120.66667, -130)
+position = Vector2(263.33337, -128)
 scale = Vector2(0.5, 0.5)
 
-[node name="TileMapLayer10" type="TileMapLayer" parent="."]
-position = Vector2(4.667, 29.333)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
-tile_set = SubResource("TileSet_4a80a")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer10"]
-position = Vector2(0, 88)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer10/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_5td24")
-
-[node name="StaticBody2D" parent="." instance=ExtResource("4_oeycs")]
-position = Vector2(-122.00003, 33.333332)
-
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_oeycs")]
-position = Vector2(77.999985, 33.33333)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("4_oeycs")]
-position = Vector2(130.66667, -0.6666667)
-
-[node name="TileMapLayer11" type="TileMapLayer" parent="."]
-position = Vector2(194, 29.333)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
-tile_set = SubResource("TileSet_4a80a")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer11"]
-position = Vector2(0, 88)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer11/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_5td24")
+position = Vector2(77.99998, 32.666656)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("4_oeycs")]
-position = Vector2(183.3333, 33.333332)
-
-[node name="TileMapLayer13" type="TileMapLayer" parent="."]
-position = Vector2(316.66663, 40)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
-tile_set = SubResource("TileSet_4a80a")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer13"]
-position = Vector2(0, 88)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer13/StaticBody2D"]
-position = Vector2(12.148132, -63.851845)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_5td24")
+position = Vector2(198.00003, 32.666668)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_oeycs")]
-position = Vector2(329.33334, 10)
+position = Vector2(329.33334, 8.666666)
 
 [node name="spikes" type="Node2D" parent="."]
 position = Vector2(-10.000015, -8.000008)
@@ -192,25 +108,19 @@ position = Vector2(-328.66675, -74.667)
 position = Vector2(-319.33337, -74.667)
 
 [node name="StaticBody2D7" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-604.8889, -97.33331)
+position = Vector2(-588.88885, -74.66666)
 
 [node name="StaticBody2D8" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-628.8888, -96.888885)
+position = Vector2(-606.6665, -74.66666)
 
 [node name="StaticBody2D9" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
 position = Vector2(-597.7777, -74.66666)
 
 [node name="StaticBody2D10" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-557.3334, -97.33331)
+position = Vector2(-579.9999, -74.66666)
 
 [node name="StaticBody2D11" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-533.77783, -97.33331)
-
-[node name="StaticBody2D12" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-494.22217, -97.33333)
-
-[node name="StaticBody2D13" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
-position = Vector2(-469.33325, -97.33333)
+position = Vector2(-571.5555, -74.66666)
 
 [node name="spikes2" type="Node2D" parent="spikes/spikes4"]
 position = Vector2(93.33333, 0)
@@ -230,14 +140,48 @@ position = Vector2(-496.8888, -89.33333)
 [node name="StaticBody2D8" parent="spikes/spikes4/spikes3" instance=ExtResource("5_cnnn8")]
 position = Vector2(-486.22214, -89.33333)
 
-[node name="StaticBody2D6" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
-position = Vector2(-365.55585, -74.667)
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_dlbem")]
+position = Vector2(104.66667, 35.333332)
 
-[node name="StaticBody2D7" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
-position = Vector2(-374.44473, -74.667)
+[node name="TileMapLayer8" type="TileMapLayer" parent="."]
+position = Vector2(16.666695, 29.333347)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAIAAAAAAACAAQAAFAIAAEAAAADAAQAAFAIAP//AAABAAIAAAAIAP7/AAACAAEAAGAIAP3/AAABAAQAAFASAAEAAAADAAQAAFASAP3/AAABAAQAAFASAP7/AAACAAQAAFASAP//AAACAAQAAFASAAAAAAACAAQAAFAUAPr/AAABAAQAAAAWAPr/AAADAAQAAAAVAPr/AAACAAQAAAAYAPf/AAABAAQAAAAZAPf/AAACAAQAAAAaAPf/AAACAAQAAAAbAPf/AAACAAQAAAAcAPf/AAACAAQAAAAdAPf/AAACAAQAAAAeAPf/AAACAAQAAAAfAPf/AAADAAQAAAAgAP//AAABAAQAAAAnAP//AAADAAQAAAAmAP//AAACAAQAAAAlAP//AAACAAQAAAAkAP//AAACAAQAAAAjAP//AAACAAQAAAAiAP//AAACAAQAAAAhAP//AAACAAQAAAAVAPP/AAADAAQAAAAUAPP/AAACAAQAAAATAPP/AAACAAQAAAASAPP/AAACAAQAAAARAPP/AAACAAQAAAAQAPP/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_07cdk")
 
-[node name="StaticBody2D8" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
-position = Vector2(-383.33362, -74.667)
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer8"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
 
-[node name="CharacterBody2D" parent="." groups=["slime"] instance=ExtResource("6_dlbem")]
-position = Vector2(234, 4.666664)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(33.333324, -60.592613)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_xntk2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(73.18517, -60.74075)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_xntk2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(86.074066, -80.00003)
+scale = Vector2(0.6666667, 0.6666667)
+shape = SubResource("RectangleShape2D_oeycs")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(111.83333, -91.907425)
+shape = SubResource("RectangleShape2D_cnnn8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(75.703674, -108.00003)
+shape = SubResource("RectangleShape2D_dlbem")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(144.14813, -59.85187)
+shape = SubResource("RectangleShape2D_k15rg")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("6_dlbem")]
+position = Vector2(251.33333, -61.333332)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("6_dlbem")]
+position = Vector2(180.66667, -101.33333)
