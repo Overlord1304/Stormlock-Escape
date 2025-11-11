@@ -1,0 +1,243 @@
+[gd_scene load_steps=11 format=4 uid="uid://jn745xpa1txt"]
+
+[ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_21nby"]
+[ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="2_07cdk"]
+[ext_resource type="PackedScene" uid="uid://ddb2p8p32lcdq" path="res://scenes/food.tscn" id="3_xntk2"]
+[ext_resource type="PackedScene" uid="uid://csw4i03ojyj6d" path="res://scenes/spring.tscn" id="4_oeycs"]
+[ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="5_cnnn8"]
+[ext_resource type="PackedScene" uid="uid://qhpp4r3qvdd1" path="res://scenes/slime.tscn" id="6_dlbem"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4clqh"]
+texture = ExtResource("2_07cdk")
+texture_region_size = Vector2i(6, 6)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4a80a"]
+tile_size = Vector2i(6, 6)
+sources/0 = SubResource("TileSetAtlasSource_4clqh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5td24"]
+size = Vector2(15.802478, 1.7777786)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dihl"]
+size = Vector2(12.148151, 2.2962952)
+
+[node name="segment2" type="Node2D"]
+position = Vector2(100, 4)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_21nby")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(282, -10)
+rect = Rect2(-106, -10, 25, 20)
+
+[node name="TileMapLayer8" type="TileMapLayer" parent="."]
+position = Vector2(-103.33331, 29.333347)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer8"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D"]
+position = Vector2(12.148132, -63.851845)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5td24")
+
+[node name="TileMapLayer9" type="TileMapLayer" parent="."]
+position = Vector2(100, 28.666336)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAAFAPj/AAABAAQAAAAGAPj/AAACAAQAAAAHAPj/AAADAAQAAAD///X/AAABAAQAAAAAAPX/AAACAAQAAAABAPX/AAADAAQAAAAFAPL/AAABAAQAAAAGAPL/AAACAAQAAAAHAPL/AAADAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer9"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
+position = Vector2(12.148132, -63.851845)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5td24")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
+position = Vector2(26.222221, -88.03689)
+shape = SubResource("RectangleShape2D_1dihl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
+position = Vector2(1.9259338, -100.18503)
+shape = SubResource("RectangleShape2D_1dihl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer9/StaticBody2D"]
+position = Vector2(26.222237, -112.036896)
+shape = SubResource("RectangleShape2D_1dihl")
+
+[node name="Node2D" parent="." instance=ExtResource("3_xntk2")]
+position = Vector2(120.66667, -130)
+scale = Vector2(0.5, 0.5)
+
+[node name="TileMapLayer10" type="TileMapLayer" parent="."]
+position = Vector2(4.667, 29.333)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer10"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer10/StaticBody2D"]
+position = Vector2(12.148132, -63.851845)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5td24")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_oeycs")]
+position = Vector2(-122.00003, 33.333332)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_oeycs")]
+position = Vector2(77.999985, 33.33333)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_oeycs")]
+position = Vector2(130.66667, -0.6666667)
+
+[node name="TileMapLayer11" type="TileMapLayer" parent="."]
+position = Vector2(194, 29.333)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer11"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer11/StaticBody2D"]
+position = Vector2(12.148132, -63.851845)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5td24")
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("4_oeycs")]
+position = Vector2(183.3333, 33.333332)
+
+[node name="TileMapLayer13" type="TileMapLayer" parent="."]
+position = Vector2(316.66663, 40)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAP7/AAADAAIAAGACAP7/AAACAAMAADADAP7/AAACAAEAADAEAP7/AAACAAQAAAAFAP7/AAADAAQAAAAAAP7/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_4a80a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer13"]
+position = Vector2(0, 88)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer13/StaticBody2D"]
+position = Vector2(12.148132, -63.851845)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5td24")
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_oeycs")]
+position = Vector2(329.33334, 10)
+
+[node name="spikes" type="Node2D" parent="."]
+position = Vector2(-10.000015, -8.000008)
+scale = Vector2(1.5, 1.5)
+
+[node name="spikes4" type="Node2D" parent="spikes"]
+position = Vector2(279.99994, 0)
+
+[node name="StaticBody2D" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-356.667, -74.667)
+
+[node name="StaticBody2D2" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-347.33356, -74.667)
+
+[node name="StaticBody2D3" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-338.00015, -74.667)
+
+[node name="StaticBody2D4" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-328.66675, -74.667)
+
+[node name="StaticBody2D5" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-319.33337, -74.667)
+
+[node name="spikes" type="Node2D" parent="spikes/spikes4"]
+position = Vector2(46.666668, 0)
+
+[node name="StaticBody2D" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-356.667, -74.667)
+
+[node name="StaticBody2D2" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-347.33356, -74.667)
+
+[node name="StaticBody2D3" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-338.00015, -74.667)
+
+[node name="StaticBody2D4" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-328.66675, -74.667)
+
+[node name="StaticBody2D5" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-319.33337, -74.667)
+
+[node name="StaticBody2D7" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-604.8889, -97.33331)
+
+[node name="StaticBody2D8" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-628.8888, -96.888885)
+
+[node name="StaticBody2D9" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-597.7777, -74.66666)
+
+[node name="StaticBody2D10" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-557.3334, -97.33331)
+
+[node name="StaticBody2D11" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-533.77783, -97.33331)
+
+[node name="StaticBody2D12" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-494.22217, -97.33333)
+
+[node name="StaticBody2D13" parent="spikes/spikes4/spikes" instance=ExtResource("5_cnnn8")]
+position = Vector2(-469.33325, -97.33333)
+
+[node name="spikes2" type="Node2D" parent="spikes/spikes4"]
+position = Vector2(93.33333, 0)
+
+[node name="StaticBody2D" parent="spikes/spikes4/spikes2" instance=ExtResource("5_cnnn8")]
+position = Vector2(-356.667, -74.667)
+
+[node name="StaticBody2D2" parent="spikes/spikes4/spikes2" instance=ExtResource("5_cnnn8")]
+position = Vector2(-347.33356, -74.667)
+
+[node name="spikes3" type="Node2D" parent="spikes/spikes4"]
+position = Vector2(207.99994, 0)
+
+[node name="StaticBody2D7" parent="spikes/spikes4/spikes3" instance=ExtResource("5_cnnn8")]
+position = Vector2(-496.8888, -89.33333)
+
+[node name="StaticBody2D8" parent="spikes/spikes4/spikes3" instance=ExtResource("5_cnnn8")]
+position = Vector2(-486.22214, -89.33333)
+
+[node name="StaticBody2D6" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-365.55585, -74.667)
+
+[node name="StaticBody2D7" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-374.44473, -74.667)
+
+[node name="StaticBody2D8" parent="spikes/spikes4" instance=ExtResource("5_cnnn8")]
+position = Vector2(-383.33362, -74.667)
+
+[node name="CharacterBody2D" parent="." groups=["slime"] instance=ExtResource("6_dlbem")]
+position = Vector2(234, 4.666664)
