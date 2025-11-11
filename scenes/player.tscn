@@ -239,7 +239,7 @@ animations = [{
 size = Vector2(10, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(1610, 1289)
+size = Vector2(1949, 1289)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("6_tuyoq")
@@ -324,7 +324,7 @@ shape = SubResource("RectangleShape2D_smehm")
 [node name="stormdetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stormdetector"]
-position = Vector2(143, -626.5)
+position = Vector2(-26.5, -626.5)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="hungerbar" type="Node2D" parent="."]

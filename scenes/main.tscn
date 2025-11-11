@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene load_steps=14 format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
@@ -7,10 +7,15 @@
 [ext_resource type="FontFile" uid="uid://dp8n25op4qny" path="res://font/pixelsans/PixeloidSansBold-OG894.ttf" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="8_choun"]
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
 [ext_resource type="FontFile" uid="uid://hlim3k3hnfla" path="res://font/pixelsans/PixeloidSans-E40en.ttf" id="9_ya4ey"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85g3d"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
+shader = ExtResource("8_choun")
+shader_parameter/saturation = 0.6730000319675
 
 [sub_resource type="FontVariation" id="FontVariation_ya4ey"]
 fallbacks = Array[Font]([ExtResource("9_ya4ey")])
@@ -76,25 +81,28 @@ position = Vector2(525, 0)
 [node name="Storm3" parent="storm" instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, -132)
-speed = null
 
 [node name="Storm2" parent="storm" instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, 55)
-speed = null
 
 [node name="Storm" parent="storm" instance=ExtResource("5_tbgi4")]
 z_index = 1
+material = SubResource("ShaderMaterial_85g3d")
 position = Vector2(43, 256)
-speed = null
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tipki")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 366.0
+offset_top = -368.0
+offset_right = 1366.0
+offset_bottom = 632.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 offset = Vector2(300, 0)

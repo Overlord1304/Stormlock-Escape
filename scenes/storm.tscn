@@ -1,7 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxibmeu87kxoy"]
+[gd_scene load_steps=14 format=3 uid="uid://cxibmeu87kxoy"]
 
 [ext_resource type="Script" uid="uid://chkubcy5wnqoq" path="res://scripts/storm.gd" id="1_dl58t"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="2_2jbef"]
 [ext_resource type="Texture2D" uid="uid://bquo2v3f2jhw1" path="res://sprites/storm.png" id="2_dl58t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e674d"]
+shader = ExtResource("2_2jbef")
+shader_parameter/saturation = 1.5450000733875
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jbef"]
 atlas = ExtResource("2_dl58t")
@@ -63,6 +68,7 @@ size = Vector2(401, 675)
 script = ExtResource("1_dl58t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_e674d")
 position = Vector2(-809.5001, -103.50001)
 scale = Vector2(6.9023433, 6.2812495)
 sprite_frames = SubResource("SpriteFrames_i2rct")

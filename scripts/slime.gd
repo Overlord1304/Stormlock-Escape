@@ -27,7 +27,7 @@ func _process(_float):
 		var dir_sign = sign(direction)
 		var distance = abs(direction)
 		
-		velocity.x = dir_sign * (speed*distance+50)
+		velocity.x = dir_sign * (speed*distance+25)
 		
 
 func _on_area_2d_body_entered(body) -> void:
