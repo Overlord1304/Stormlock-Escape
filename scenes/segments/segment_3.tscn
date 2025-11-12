@@ -129,15 +129,6 @@ position = Vector2(-6.222229, -75.11111)
 [node name="StaticBody2D28" parent="spike" instance=ExtResource("3_bf286")]
 position = Vector2(2.6666641, -75.11111)
 
-[node name="StaticBody2D29" parent="spike" instance=ExtResource("3_bf286")]
-position = Vector2(-403.5556, -75.11111)
-
-[node name="StaticBody2D30" parent="spike" instance=ExtResource("3_bf286")]
-position = Vector2(-422.22232, -75.11111)
-
-[node name="StaticBody2D31" parent="spike" instance=ExtResource("3_bf286")]
-position = Vector2(-412.88904, -75.11111)
-
 [node name="TileMapLayer6" type="TileMapLayer" parent="."]
 position = Vector2(140.66666, 30.333336)
 scale = Vector2(1.5, 1.5)

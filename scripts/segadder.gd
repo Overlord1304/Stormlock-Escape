@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 	check_and_spawn()
 
 func spawn_segment() -> void:
-	var rand = randi() % 10
+	var rand = randi() % 15
 	var scene : PackedScene
 	var y_pos := 69.0
 	
@@ -50,18 +50,18 @@ func spawn_segment() -> void:
 		6,7:
 			scene = segment4
 			SEGMENT_WIDTH = 950.0
-		8:
+		8,9:
 			scene = segment5 
 			SEGMENT_WIDTH = 900.0
-		9:
+		10,11:
 			scene = segment6
 			SEGMENT_WIDTH = 1100.0
 			y_pos = 81.0
-		10:
+		12,13:
 			scene = segment7
 			SEGMENT_WIDTH = 900.0
 			y_pos = 81.0
-		11:
+		14:
 			scene = segment8
 			SEGMENT_WIDTH = 850.0
 			y_pos = 81.0
