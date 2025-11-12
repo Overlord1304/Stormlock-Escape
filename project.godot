@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stormlock Escape"
-run/main_scene="uid://cqjlto8t8tru2"
+run/main_scene="uid://b4gjnyrcmwlvv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

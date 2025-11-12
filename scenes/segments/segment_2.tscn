@@ -141,13 +141,13 @@ rotation = 3.1415927
 position = Vector2(-121.44446, -74.999985)
 
 [node name="StaticBody2D12" parent="spike" instance=ExtResource("3_5td24")]
-position = Vector2(-355.8889, -75.22222)
+position = Vector2(-355.88885, -74.77778)
 
 [node name="StaticBody2D17" parent="spike" instance=ExtResource("3_5td24")]
-position = Vector2(-364.77777, -75.22222)
+position = Vector2(-364.77777, -74.77778)
 
 [node name="StaticBody2D18" parent="spike" instance=ExtResource("3_5td24")]
-position = Vector2(-373.66663, -75.22222)
+position = Vector2(-373.66663, -74.77778)
 
 [node name="StaticBody2D19" parent="spike" instance=ExtResource("3_5td24")]
 position = Vector2(-50.333336, -74.999985)

@@ -205,3 +205,14 @@ position = Vector2(58.999973, -51)
 scale = Vector2(0.22864585, 0.29583332)
 texture = ExtResource("2_quimm")
 centered = false
+
+[node name="ParallaxLayer14" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(441, -189)
+motion_mirroring = Vector2(880, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer14"]
+material = SubResource("ShaderMaterial_uyuwf")
+position = Vector2(-383, -241)
+scale = Vector2(6.1241384, 9.486574)
+texture = ExtResource("5_quimm")
+centered = false
