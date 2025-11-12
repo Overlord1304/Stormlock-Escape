@@ -114,7 +114,17 @@ func die():
 	anim.play("death")
 	await anim.animation_finished
 	get_tree().reload_current_scene()
-
+func die_to_spike():
+	Global.player_died = true
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	set_process(false)
+	set_physics_process(false)
+	anim.play("dietospike")
+	await anim.animation_finished
+	get_tree().reload_current_scene()
 func die_to_slime():
 	Global.player_died = true
 	if is_dead:
