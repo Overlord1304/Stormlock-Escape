@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://kj37qun7v8li"]
 
-[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="1_lmksl"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/saturation.gdshader" id="1_lmksl"]
 [ext_resource type="Texture2D" uid="uid://dsh7uys7mxodk" path="res://sprites/groundtileset.png" id="1_pybca"]
 [ext_resource type="PackedScene" uid="uid://l06iir7dcjay" path="res://scenes/grass.tscn" id="2_mi8v4"]
 

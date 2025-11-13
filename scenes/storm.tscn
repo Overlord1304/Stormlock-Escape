@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cxibmeu87kxoy"]
 
 [ext_resource type="Script" uid="uid://chkubcy5wnqoq" path="res://scripts/storm.gd" id="1_dl58t"]
-[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="2_2jbef"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/saturation.gdshader" id="2_2jbef"]
 [ext_resource type="Texture2D" uid="uid://bquo2v3f2jhw1" path="res://sprites/storm.png" id="2_dl58t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e674d"]

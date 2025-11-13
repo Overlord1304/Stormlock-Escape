@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dp8n25op4qny" path="res://font/pixelsans/PixeloidSansBold-OG894.ttf" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cxibmeu87kxoy" path="res://scenes/storm.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b46ati8dl6si0" path="res://scenes/player.tscn" id="6_tefeu"]
-[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="8_choun"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/saturation.gdshader" id="8_choun"]
 [ext_resource type="Script" uid="uid://befc1rryut6ge" path="res://scripts/segadder.gd" id="9_85g3d"]
 [ext_resource type="FontFile" uid="uid://hlim3k3hnfla" path="res://font/pixelsans/PixeloidSans-E40en.ttf" id="9_ya4ey"]
 

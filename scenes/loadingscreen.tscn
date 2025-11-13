@@ -66,4 +66,4 @@ script = ExtResource("1_kodxk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(440, 335)
 sprite_frames = SubResource("SpriteFrames_cxquy")
-frame_progress = 0.44234633
+frame_progress = 0.115647554

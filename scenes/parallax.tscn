@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://c1ih35j0saddb"]
 
 [ext_resource type="Texture2D" uid="uid://cq3os8ycujfth" path="res://parallax/L1.png" id="1_dgjee"]
-[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/test.gdshader" id="1_yvlf7"]
+[ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/saturation.gdshader" id="1_yvlf7"]
 [ext_resource type="Texture2D" uid="uid://bk03l5mvcodh1" path="res://parallax/L2.png" id="2_quimm"]
 [ext_resource type="Texture2D" uid="uid://doo2ng8j4g24a" path="res://parallax/L3.png" id="3_yvlf7"]
 [ext_resource type="Texture2D" uid="uid://cdiisgrvmljeq" path="res://parallax/L4.png" id="4_hankl"]
