@@ -95,14 +95,14 @@ func _physics_process(delta):
 		hunger = max(hunger, 0)
 		hunger_bar.update_hunger(hunger)
 	if hunger_bar.frame == 7:
-		die_to_slime()
+		die("dietospike")
 
 
 
 
 
 
-func die():
+func die(anim_name: String):
 	Global.player_died = true
 	if is_dead:
 		return
@@ -110,29 +110,7 @@ func die():
 	velocity = Vector2.ZERO
 	set_process(false)
 	set_physics_process(false)
-	anim.play("death")
-	await anim.animation_finished
-	get_tree().reload_current_scene()
-func die_to_spike():
-	Global.player_died = true
-	if is_dead:
-		return
-	is_dead = true
-	velocity = Vector2.ZERO
-	set_process(false)
-	set_physics_process(false)
-	anim.play("dietospike")
-	await anim.animation_finished
-	get_tree().reload_current_scene()
-func die_to_slime():
-	Global.player_died = true
-	if is_dead:
-		return
-	is_dead = true
-	velocity = Vector2.ZERO
-	set_process(false)
-	set_physics_process(false)
-	anim.play("slimedeath")
+	anim.play(anim_name)
 	await anim.animation_finished
 	get_tree().reload_current_scene()
 

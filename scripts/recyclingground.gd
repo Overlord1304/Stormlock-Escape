@@ -11,7 +11,7 @@ func _ready():
 	ground_container = get_node("../GroundContainer")
 	segment_width = calculate_segment_width()
 	
-	# spawn a few of the segments
+	
 	for i in segment_count:
 		var seg = ground_scene.instantiate()
 		seg.position.x = i * segment_width
@@ -23,10 +23,10 @@ func _process(_delta):
 	var camera_x = cam.global_position.x
 	var screen_w = get_viewport().size.x
 	
-	# chekc if any segments r off screen
+	# check if any segments r off screen
 	for seg in segments:
 		if seg.global_position.x + segment_width < camera_x - screen_w * 1.5:
-			# move segment to the right side
+			
 			var right = find_right_segment()
 			seg.global_position.x = right.global_position.x + segment_width
 
