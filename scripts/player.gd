@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var speed := 150.0
-@export var jump_force := -150.0
-@export var jump_hold_force := -1100
-@export var gravity := 900.0
-@export var jump_hold_time := 0.25
+@export var speed = 150.0
+@export var jump_force = -150.0
+@export var jump_hold_force = -1100
+@export var gravity = 900.0
+@export var jump_hold_time = 0.25
 @onready var anim := $AnimatedSprite2D
 @onready var hunger_bar = $hungerbar/AnimatedSprite2D
 var hunger_timer = 0.0
@@ -18,7 +18,6 @@ var coyote_timer = 0.0
 var is_on_ground = false
 
 var can_move = true
-var jump_done = false
 var is_dead = false
 var jump_timer := 0.0
 var is_jumping := false
@@ -44,7 +43,7 @@ func _physics_process(delta):
 
 	
 
-	# coyote and jump buffer
+	
 	if jump_buffer_timer > 0:
 		jump_buffer_timer -= delta
 	if coyote_timer > 0:
@@ -76,7 +75,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	#anims
+	
 	if not is_on_floor():
 		if anim.animation == "jump" and not anim.is_playing():
 			if direction == 0:
@@ -88,7 +87,7 @@ func _physics_process(delta):
 	else:
 		anim.play("walk")
 
-	#hunger sys
+	
 	hunger_timer += delta
 	if hunger_timer > 7.5:
 		hunger_timer = 0
@@ -102,7 +101,7 @@ func _physics_process(delta):
 
 
 
-# rip functions
+
 func die():
 	Global.player_died = true
 	if is_dead:
@@ -138,7 +137,7 @@ func die_to_slime():
 	get_tree().reload_current_scene()
 
 
-#storm
+
 func _on_stormdetector_body_entered(body):
 	if body.is_in_group("storm"):
 		body.reduce_speed()
@@ -148,11 +147,11 @@ func _on_stormdetector_body_exited(body):
 		body.increase_speed()
 
 
-#hunger
+
 func _on_food_collected():
 	hunger = clamp(hunger + 2, 0, 8)
 	hunger_bar.update_hunger(hunger)
 
-#spring
+
 func bounce():
 	velocity.y = -500

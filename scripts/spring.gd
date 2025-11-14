@@ -1,7 +1,7 @@
 extends StaticBody2D
 @onready var anim = $AnimatedSprite2D
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("slime"):
 		anim.play("spring")
 		body.bounce()
 

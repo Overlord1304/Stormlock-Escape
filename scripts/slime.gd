@@ -54,3 +54,5 @@ func die():
 	anim.play("death")
 	await anim.animation_finished
 	self.queue_free()
+func bounce():
+	velocity.y = -500

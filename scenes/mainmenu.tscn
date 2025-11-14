@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://b4gjnyrcmwlvv"]
 
 [ext_resource type="Script" uid="uid://cpdxtdf07e04v" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
-[ext_resource type="Texture2D" uid="uid://b2xa1mvfkvunk" path="res://sprites/Screenshot 2025-11-12 124342.png" id="3_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://c04j7osl8rn2x" path="res://sprites/Screenshot 2025-11-13 165210.png" id="2_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://dkw16kkruvkpn" path="res://sprites/playbtn2.png" id="3_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://hvdwin1rg1wd" path="res://sprites/playbtn3.png" id="4_7yvfd"]
 [ext_resource type="Texture2D" uid="uid://d36gkyb0nwnju" path="res://sprites/logo.png" id="5_s5g8n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5g8n"]
-texture = ExtResource("3_3vvtq")
+texture = ExtResource("2_s5g8n")
 modulate_color = Color(0.3141408, 0.3141408, 0.3141408, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfy5j"]
