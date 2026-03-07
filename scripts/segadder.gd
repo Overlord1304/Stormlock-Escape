@@ -2,13 +2,13 @@ extends Node2D
 
 @onready var player = $"../player"
 
-var camera : Camera2D
-var next_x := 0.0
-var zone_of_doom := 1000.0
-var MAX_SEGMENTS := 8
+var camera:Camera2D
+var next_x = 0.0
+var zone_of_doom = 1000.0
+var MAX_SEGMENTS = 8
 
 
-var segment_data := [
+var segment_data = [
 	{"scene": preload("res://scenes/segments/segment_1.tscn"), "width": 900.0,  "y": 95.0, "weight": 2},
 	{"scene": preload("res://scenes/segments/segment_2.tscn"), "width": 1200.0, "y": 69.0, "weight": 2},
 	{"scene": preload("res://scenes/segments/segment_3.tscn"), "width": 1275.0, "y": 69.0, "weight": 2},
@@ -19,7 +19,7 @@ var segment_data := [
 	{"scene": preload("res://scenes/segments/segment_8.tscn"), "width": 850.0,  "y": 81.0, "weight": 1}
 ]
 
-var segments := []
+var segments = []
 
 func _ready() -> void:
 	randomize()
@@ -62,7 +62,7 @@ func cleanup_segments() -> void:
 	if camera == null:
 		return
 
-	var camera_x := camera.global_position.x
+	var camera_x = camera.global_position.x
 	for i in range(segments.size() - 1, -1, -1):
 		var seg = segments[i]
 		if not is_instance_valid(seg):
@@ -75,12 +75,6 @@ func cleanup_segments() -> void:
 func check_and_spawn() -> void:
 	if camera == null:
 		return
-
-	var camera_x := camera.global_position.x
-	var farthest_x := -INF
-	for seg in segments:
-		if seg.global_position.x > farthest_x:
-			farthest_x = seg.global_position.x
-
-	if camera_x + zone_of_doom > farthest_x and segments.size() < MAX_SEGMENTS:
+	var camera_x = camera.global_position.x
+	if camera_x + zone_of_doom > next_x and segments.size() < MAX_SEGMENTS:
 		spawn_segment()

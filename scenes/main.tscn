@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqjlto8t8tru2"]
+[gd_scene format=3 uid="uid://cqjlto8t8tru2"]
 
 [ext_resource type="PackedScene" uid="uid://kj37qun7v8li" path="res://scenes/ground.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://108snr1cx5ur" path="res://scripts/game.gd" id="1_tefeu"]
@@ -25,32 +25,32 @@ base_font = ExtResource("5_85g3d")
 shader = ExtResource("8_choun")
 shader_parameter/saturation = 0.2800000133
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=675355119]
 material = SubResource("ShaderMaterial_ya4ey")
 script = ExtResource("1_tefeu")
 
-[node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
+[node name="Node2D" parent="." unique_id=360906429 instance=ExtResource("3_sugp2")]
 use_parent_material = true
 position = Vector2(-980, -324)
 
-[node name="GroundContainer" type="Node2D" parent="."]
+[node name="GroundContainer" type="Node2D" parent="." unique_id=2017052449]
 position = Vector2(0, 152)
 
-[node name="GroundSpawner" type="Node2D" parent="."]
+[node name="GroundSpawner" type="Node2D" parent="." unique_id=277722866]
 position = Vector2(0, 2)
 script = ExtResource("4_jyhfs")
 ground_scene = ExtResource("1_sugp2")
 
-[node name="GroundSegment" parent="." instance=ExtResource("1_sugp2")]
+[node name="GroundSegment" parent="." unique_id=816234799 instance=ExtResource("1_sugp2")]
 visible = false
 position = Vector2(-176, 16)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512004539]
 offset = Vector2(230, 0)
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 230, 0)
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1863639259]
 offset_left = 73.5
 offset_right = 257.5
 offset_bottom = 53.0
@@ -59,16 +59,16 @@ theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_85g3d")
 
-[node name="player" parent="." instance=ExtResource("6_tefeu")]
+[node name="player" parent="." unique_id=1398758826 instance=ExtResource("6_tefeu")]
 z_index = 2
 position = Vector2(727, 112)
 
-[node name="lvlgen" type="Node2D" parent="."]
+[node name="lvlgen" type="Node2D" parent="." unique_id=492846706]
 script = ExtResource("9_85g3d")
 
-[node name="countdown" type="Node" parent="."]
+[node name="countdown" type="Node" parent="." unique_id=1820911294]
 
-[node name="CountdownLabel" type="Label" parent="countdown"]
+[node name="CountdownLabel" type="Label" parent="countdown" unique_id=180953591]
 offset_left = 717.0
 offset_top = 63.0
 offset_right = 757.0
@@ -79,29 +79,29 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_85g3d")
 horizontal_alignment = 1
 
-[node name="CountdownTimer" type="Timer" parent="countdown"]
+[node name="CountdownTimer" type="Timer" parent="countdown" unique_id=1676796305]
 
-[node name="storm" type="Node2D" parent="."]
+[node name="storm" type="Node2D" parent="." unique_id=216576631]
 position = Vector2(525, 0)
 
-[node name="Storm3" parent="storm" instance=ExtResource("5_tbgi4")]
+[node name="Storm3" parent="storm" unique_id=1627130704 instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, -132)
 
-[node name="Storm2" parent="storm" instance=ExtResource("5_tbgi4")]
+[node name="Storm2" parent="storm" unique_id=420426476 instance=ExtResource("5_tbgi4")]
 z_index = 1
 position = Vector2(44, 55)
 
-[node name="Storm" parent="storm" instance=ExtResource("5_tbgi4")]
+[node name="Storm" parent="storm" unique_id=1261566740 instance=ExtResource("5_tbgi4")]
 z_index = 1
 material = SubResource("ShaderMaterial_85g3d")
 position = Vector2(43, 256)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2039877117]
 offset = Vector2(300, 0)
 transform = Transform2D(1, 0, 0, 1, 300, 0)
 
-[node name="highscore" type="Label" parent="CanvasLayer2"]
+[node name="highscore" type="Label" parent="CanvasLayer2" unique_id=1552234313]
 offset_left = -267.0
 offset_top = 6.0
 offset_right = -227.0
@@ -111,7 +111,7 @@ theme_override_colors/font_outline_color = Color(0.9884344, 0.45706975, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("FontVariation_ya4ey")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=451690722]
 material = SubResource("ShaderMaterial_choun")
 offset_left = -558.0
 offset_top = -263.0

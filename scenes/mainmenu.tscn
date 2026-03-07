@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4gjnyrcmwlvv"]
+[gd_scene format=3 uid="uid://b4gjnyrcmwlvv"]
 
 [ext_resource type="Script" uid="uid://cpdxtdf07e04v" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://c04j7osl8rn2x" path="res://sprites/Screenshot 2025-11-13 165210.png" id="2_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://dkw16kkruvkpn" path="res://sprites/playbtn2.png" id="3_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://hvdwin1rg1wd" path="res://sprites/playbtn3.png" id="4_7yvfd"]
-[ext_resource type="Texture2D" uid="uid://d36gkyb0nwnju" path="res://sprites/logo.png" id="5_s5g8n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5g8n"]
 texture = ExtResource("2_s5g8n")
@@ -31,7 +30,7 @@ expand_margin_top = 116.0
 expand_margin_right = 87.0
 expand_margin_bottom = 128.0
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=584476437]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r3g3c")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=209530087]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,26 +54,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_s5g8n")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=2044000050]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = 43.5
-offset_right = 100.0
-offset_bottom = 188.5
+offset_left = -86.5
+offset_top = -72.5
+offset_right = 86.5
+offset_bottom = 72.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_dfy5j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7yvfd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3vvtq")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(455.00003, 202)
-scale = Vector2(0.70963544, 0.671875)
-texture = ExtResource("5_s5g8n")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

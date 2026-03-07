@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 150.0
-@export var jump_force = -150.0
-@export var jump_hold_force = -1100
-@export var gravity = 900.0
-@export var jump_hold_time = 0.25
-@onready var anim := $AnimatedSprite2D
+var speed = 150.0
+var jump_force = -150.0
+var jump_hold_force = -1100
+var gravity = 900.0
+var jump_hold_time = 0.25
+@onready var anim = $AnimatedSprite2D
 @onready var hunger_bar = $hungerbar/AnimatedSprite2D
 var hunger_timer = 0.0
 var hunger = 8
@@ -19,10 +19,11 @@ var is_on_ground = false
 
 var can_move = true
 var is_dead = false
-var jump_timer := 0.0
-var is_jumping := false
+var jump_timer = 0.0
+var is_jumping = false
 
 func _ready():
+	$AudioStreamPlayer2D.play()
 	Global.player_died = false
 	anim.play("idle")
 
@@ -35,7 +36,7 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * speed
 
 	if direction != 0:

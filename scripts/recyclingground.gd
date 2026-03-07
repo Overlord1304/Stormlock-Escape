@@ -10,8 +10,6 @@ var ground_container
 func _ready():
 	ground_container = get_node("../GroundContainer")
 	segment_width = calculate_segment_width()
-	
-	
 	for i in segment_count:
 		var seg = ground_scene.instantiate()
 		seg.position.x = i * segment_width

@@ -1,7 +1,7 @@
 extends Node
 
-var score: float = 0.0
-var high_score: float = 0.0
+var score = 0.0
+var high_score= 0.0
 
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var high_score_label =$CanvasLayer2/highscore

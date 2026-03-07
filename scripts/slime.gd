@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var gravity := 900
+@export var gravity = 900
 @export var speed = 1
 @onready var anim = $AnimatedSprite2D
 var direction
