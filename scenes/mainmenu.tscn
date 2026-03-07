@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c04j7osl8rn2x" path="res://sprites/Screenshot 2025-11-13 165210.png" id="2_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://dkw16kkruvkpn" path="res://sprites/playbtn2.png" id="3_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://hvdwin1rg1wd" path="res://sprites/playbtn3.png" id="4_7yvfd"]
+[ext_resource type="FontFile" uid="uid://lghxja6t5ovd" path="res://font/Fredoka-Regular.ttf" id="5_s5g8n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5g8n"]
 texture = ExtResource("2_s5g8n")
@@ -62,13 +63,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -86.5
-offset_top = -72.5
+offset_top = -96.0
 offset_right = 86.5
-offset_bottom = 72.5
+offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_dfy5j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7yvfd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3vvtq")
+
+[node name="Label" type="Label" parent="." unique_id=1092365545]
+layout_mode = 0
+offset_right = 881.0
+offset_bottom = 208.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_s5g8n")
+theme_override_font_sizes/font_size = 100
+text = "Stormlock Escape"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

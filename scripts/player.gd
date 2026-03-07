@@ -15,7 +15,6 @@ var jump_buffer_time = 0.1
 var jump_buffer_timer = 0.0
 var coyote_time = 0.1
 var coyote_timer = 0.0
-var is_on_ground = false
 
 var can_move = true
 var is_dead = false
@@ -28,82 +27,71 @@ func _ready():
 	anim.play("idle")
 
 func _physics_process(delta):
+	apply_gravity(delta)
+	update_jump_timers(delta)
+	if can_move:
+		handle_movement()
+		update_animation()
+		handle_jump_input(delta)
+	move_and_slide()
+	update_hunger(delta)
+func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	else:
+		coyote_timer = coyote_time
 
-	
-	if not can_move:
-		move_and_slide()
-		return
-
-	var direction = Input.get_axis("ui_left", "ui_right")
+func handle_movement():
+	var direction = Input.get_axis("ui_left","ui_right")
 	velocity.x = direction * speed
-
 	if direction != 0:
 		anim.flip_h = direction < 0
 
-	
-
-	
-	if jump_buffer_timer > 0:
-		jump_buffer_timer -= delta
-	if coyote_timer > 0:
-		coyote_timer -= delta
-
-	is_on_ground = is_on_floor()
-	if is_on_ground:
-		coyote_timer = coyote_time
-
-
+func handle_jump_input(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		jump_buffer_timer = jump_buffer_time
-
-
-	if jump_buffer_timer > 0 and coyote_timer > 0:
-		velocity.y = jump_force
-		is_jumping = true
-		jump_timer = 0.0
-		anim.play("jump")
-		jump_buffer_timer = 0.0  
-
-	
+	if jump_buffer_timer > 0  and coyote_timer > 0:
+		jump()
 	if Input.is_action_pressed("ui_up") and is_jumping:
 		jump_timer += delta
 		if jump_timer < jump_hold_time:
 			velocity.y += jump_hold_force * delta
 	else:
 		is_jumping = false
+func jump():
+	velocity.y = jump_force
+	is_jumping= true
+	jump_timer = 0
+	jump_buffer_timer = 0
 
-	move_and_slide()
+func update_jump_timers(delta):
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+	if coyote_timer > 0:
+		coyote_timer -= delta
 
-	
-	if not is_on_floor():
-		if anim.animation == "jump" and not anim.is_playing():
-			if direction == 0:
-				anim.play("idle")
-			else:
-				anim.play("walk")
-	elif direction == 0:
-		anim.play("idle")
+func update_animation():
+	var direction = Input.get_axis("ui_left","ui_right")
+	if direction == 0:
+		if anim.animation != "idle":
+			anim.play("idle")
 	else:
-		anim.play("walk")
-
-	
+		if anim.animation != "walk":
+			anim.play("walk")
+func update_hunger(delta):
 	hunger_timer += delta
 	if hunger_timer > 7.5:
 		hunger_timer = 0
-		hunger -= 1
-		hunger = max(hunger, 0)
+		hunger = max(hunger-1,0)
 		hunger_bar.update_hunger(hunger)
-	if hunger_bar.frame == 7:
+	if hunger_bar.frame ==7:
 		die("dietospike")
+			
 
 
 
 
-
-
-func die(anim_name: String):
+func die(anim_name):
 	Global.player_died = true
 	if is_dead:
 		return
