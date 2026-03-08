@@ -25,7 +25,6 @@ func _ready():
 	$AudioStreamPlayer2D.play()
 	Global.player_died = false
 	anim.play("idle")
-
 func _physics_process(delta):
 	apply_gravity(delta)
 	update_jump_timers(delta)
@@ -122,3 +121,23 @@ func _on_food_collected():
 
 func bounce():
 	velocity.y = -500
+func fade_out(thing):
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 0.0,0.5)
+	await tween.finished
+	thing.hide()
+func fade_in(thing):
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 1.0,0.5) 
+func tutorial():
+	Global.tutorial_seen = true
+	fade_in($up)
+	fade_in($left)
+	fade_in($right)
+	await get_tree().create_timer(3).timeout
+	fade_out($up)
+	fade_out($left)
+	fade_out($right)
+
+	
+	

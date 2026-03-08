@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://cpy6vnyqu0g31" path="res://sprites/death.png" id="2_tuyoq"]
 [ext_resource type="Shader" uid="uid://cqb47d6xysqdh" path="res://shaders/saturation.gdshader" id="2_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://boks7sleuu73r" path="res://sprites/Sprite-0001.png" id="4_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://il544cgd3mtl" path="res://sprites/playerjump-sheet.png" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://c1a1c0jbxpkoa" path="res://sprites/walking-sheet.png" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b22mmdj8fcvc2" path="res://sprites/player-idle-new.png" id="6_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://h8uw2virlgeu" path="res://sprites/hungbar.png" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://b8v72ch4xtk3a" path="res://sprites/slimedeath.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b35fbh62yj3oc" path="res://sprites/Sprite-0002.png" id="7_fjrip"]
 [ext_resource type="Script" uid="uid://xxhd308qekpf" path="res://scripts/hungerbar.gd" id="7_smehm"]
+[ext_resource type="Texture2D" uid="uid://cfa78q4u5vhmc" path="res://sprites/uparrow.png" id="12_f1ej7"]
 [ext_resource type="AudioStream" uid="uid://cogkp8dbgdf4x" path="res://music/sebg.ogg" id="13_jej6c"]
+[ext_resource type="Texture2D" uid="uid://cwkk4obv01bt2" path="res://sprites/leftarrow.png" id="13_oprun"]
+[ext_resource type="Texture2D" uid="uid://bdf0s8kw6tdwi" path="res://sprites/rightarrow.png" id="14_a8ls1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4r1p"]
 shader = ExtResource("2_ur7pv")
@@ -96,10 +98,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
 atlas = ExtResource("6_3v2ag")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
-atlas = ExtResource("4_ur7pv")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dvfe"]
 atlas = ExtResource("5_y4r1p")
@@ -201,14 +199,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dt7fs")
-}],
-"loop": false,
-"name": &"jump",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_2dvfe")
 }, {
 "duration": 1.0,
@@ -307,10 +297,10 @@ script = ExtResource("1_dqkch")
 material = SubResource("ShaderMaterial_y4r1p")
 position = Vector2(7, 2)
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"jump"
+animation = &"death"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1984459074]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=9857365]
 position = Vector2(9, 5)
@@ -323,7 +313,7 @@ position = Vector2(-26.5, -626.5)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="hungerbar" type="Node2D" parent="." unique_id=543980436]
-position = Vector2(3, -13)
+position = Vector2(-69, 41)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hungerbar" unique_id=2015398210]
 material = SubResource("ShaderMaterial_ur7pv")
@@ -340,6 +330,24 @@ texture = ExtResource("7_fjrip")
 visible = false
 position = Vector2(-727, -112)
 stream = ExtResource("13_jej6c")
+
+[node name="up" type="Sprite2D" parent="." unique_id=1207327408]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(9, -24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f1ej7")
+
+[node name="left" type="Sprite2D" parent="." unique_id=1445847643]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-15, 5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_oprun")
+
+[node name="right" type="Sprite2D" parent="." unique_id=1219122701]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(32, 5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_a8ls1")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="stormdetector" to="." method="_on_stormdetector_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8m22mdk4lsb"]
+[gd_scene format=3 uid="uid://b8m22mdk4lsb"]
 
 [ext_resource type="Script" uid="uid://c7nd6dpr1n4yn" path="res://scripts/spike.gd" id="1_7a7y0"]
 [ext_resource type="Texture2D" uid="uid://2pgc2fq1vkmd" path="res://sprites/spike.png" id="2_d2mqm"]
@@ -19,24 +19,25 @@ size = Vector2(3, 2.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a7y0"]
 size = Vector2(3, 4)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" unique_id=913896920]
+position = Vector2(0, -1)
 script = ExtResource("1_7a7y0")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=901116621]
 tile_map_data = PackedByteArray(0, 0, 15, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_60m7a")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1560403471]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=178396481]
 position = Vector2(246.5, 110)
 shape = SubResource("RectangleShape2D_b8th5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1267090604]
 position = Vector2(246.5, 108.25)
 shape = SubResource("RectangleShape2D_d2mqm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1186840204]
 position = Vector2(246.5, 110)
 shape = SubResource("RectangleShape2D_7a7y0")
 

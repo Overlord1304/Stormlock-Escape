@@ -8,13 +8,12 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		body.die("death")
 
-		
-			
+
 func _physics_process(delta: float):
 	if not Global.storm_can_move:
 		return
 	position.x += speed * delta
 func reduce_speed():
-	speed = 75
+	speed = 1
 func increase_speed():
 	speed = 10000

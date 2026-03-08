@@ -1,0 +1,209 @@
+[gd_scene format=4 uid="uid://usqe86tcd0i7"]
+
+[ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_mrgsl"]
+[ext_resource type="PackedScene" uid="uid://ddb2p8p32lcdq" path="res://scenes/food.tscn" id="2_c0dgu"]
+[ext_resource type="PackedScene" uid="uid://csw4i03ojyj6d" path="res://scenes/spring.tscn" id="3_gwkyt"]
+[ext_resource type="PackedScene" uid="uid://b8m22mdk4lsb" path="res://scenes/spike.tscn" id="4_7opeg"]
+[ext_resource type="Texture2D" uid="uid://nyqgn2wneu83" path="res://sprites/float.png" id="5_ejsq1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g614"]
+texture = ExtResource("5_ejsq1")
+texture_region_size = Vector2i(6, 6)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2os4r"]
+tile_size = Vector2i(6, 6)
+sources/0 = SubResource("TileSetAtlasSource_4g614")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrgsl"]
+size = Vector2(23.777779, 5.1111107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwkyt"]
+size = Vector2(66.22223, 4.4444447)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7opeg"]
+size = Vector2(4, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejsq1"]
+size = Vector2(4, 72)
+
+[node name="segment2" type="Node2D" unique_id=482240693]
+position = Vector2(100, 4)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_mrgsl")
+
+[node name="Node2D" parent="." unique_id=861490207 instance=ExtResource("2_c0dgu")]
+position = Vector2(214.00002, 37.333332)
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D2" parent="." unique_id=591527238 instance=ExtResource("3_gwkyt")]
+position = Vector2(112.66664, 33.333324)
+
+[node name="spikes" type="Node2D" parent="." unique_id=69604349]
+position = Vector2(-10.000015, -8.000008)
+scale = Vector2(1.5, 1.5)
+
+[node name="spikes4" type="Node2D" parent="spikes" unique_id=960784312]
+position = Vector2(279.99994, 0)
+
+[node name="spikes" type="Node2D" parent="spikes/spikes4" unique_id=161172000]
+position = Vector2(46.666668, 0)
+
+[node name="StaticBody2D7" parent="spikes/spikes4/spikes" unique_id=653855611 instance=ExtResource("4_7opeg")]
+position = Vector2(-567.9999, -74.66666)
+
+[node name="StaticBody2D8" parent="spikes/spikes4/spikes" unique_id=1237653734 instance=ExtResource("4_7opeg")]
+position = Vector2(-606.6665, -74.66666)
+
+[node name="StaticBody2D9" parent="spikes/spikes4/spikes" unique_id=1886988197 instance=ExtResource("4_7opeg")]
+position = Vector2(-597.7777, -74.66666)
+
+[node name="StaticBody2D10" parent="spikes/spikes4/spikes" unique_id=1140921384 instance=ExtResource("4_7opeg")]
+position = Vector2(-559.1111, -74.66666)
+
+[node name="StaticBody2D11" parent="spikes/spikes4/spikes" unique_id=847379522 instance=ExtResource("4_7opeg")]
+position = Vector2(-534.2221, -74.66666)
+
+[node name="StaticBody2D12" parent="spikes/spikes4/spikes" unique_id=7392867 instance=ExtResource("4_7opeg")]
+position = Vector2(-525.3331, -74.66666)
+
+[node name="StaticBody2D13" parent="spikes/spikes4/spikes" unique_id=1806951426 instance=ExtResource("4_7opeg")]
+position = Vector2(-479.99982, -74.66666)
+
+[node name="StaticBody2D14" parent="spikes/spikes4/spikes" unique_id=802499437 instance=ExtResource("4_7opeg")]
+position = Vector2(-471.11087, -74.66666)
+
+[node name="StaticBody2D15" parent="spikes/spikes4/spikes" unique_id=1872972095 instance=ExtResource("4_7opeg")]
+position = Vector2(-462.222, -74.66666)
+
+[node name="StaticBody2D16" parent="spikes/spikes4/spikes" unique_id=333867021 instance=ExtResource("4_7opeg")]
+position = Vector2(-453.33307, -74.66666)
+
+[node name="StaticBody2D17" parent="spikes/spikes4/spikes" unique_id=1695521896 instance=ExtResource("4_7opeg")]
+position = Vector2(-445.33307, -74.66666)
+
+[node name="StaticBody2D18" parent="spikes/spikes4/spikes" unique_id=1472107639 instance=ExtResource("4_7opeg")]
+position = Vector2(-438.222, -74.66667)
+
+[node name="StaticBody2D19" parent="spikes/spikes4/spikes" unique_id=860917868 instance=ExtResource("4_7opeg")]
+position = Vector2(-413.77747, -74.66666)
+
+[node name="StaticBody2D20" parent="spikes/spikes4/spikes" unique_id=1597959757 instance=ExtResource("4_7opeg")]
+position = Vector2(-519.111, -120.8889)
+
+[node name="spikes2" type="Node2D" parent="spikes/spikes4" unique_id=416038638]
+position = Vector2(93.33333, 0)
+
+[node name="spikes3" type="Node2D" parent="spikes/spikes4" unique_id=1150842551]
+position = Vector2(207.99994, 0)
+
+[node name="StaticBody2D7" parent="spikes/spikes4/spikes3" unique_id=835732372 instance=ExtResource("4_7opeg")]
+position = Vector2(-583.9999, -143.11111)
+
+[node name="StaticBody2D8" parent="spikes/spikes4/spikes3" unique_id=1755778464 instance=ExtResource("4_7opeg")]
+position = Vector2(-599.1111, -143.11111)
+
+[node name="StaticBody2D9" parent="spikes/spikes4/spikes3" unique_id=890341927 instance=ExtResource("4_7opeg")]
+position = Vector2(-591.55554, -143.11111)
+
+[node name="StaticBody2D10" parent="spikes/spikes4/spikes3" unique_id=913896920 instance=ExtResource("4_7opeg")]
+position = Vector2(-576.8888, -143.11111)
+
+[node name="StaticBody2D11" parent="spikes/spikes4/spikes3" unique_id=1673652644 instance=ExtResource("4_7opeg")]
+position = Vector2(-606.22217, -143.11111)
+
+[node name="StaticBody2D8" parent="spikes" unique_id=707538277 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55548, -276)
+rotation = 1.5707964
+
+[node name="StaticBody2D9" parent="spikes" unique_id=751493667 instance=ExtResource("4_7opeg")]
+position = Vector2(81.7778, 216.8889)
+rotation = -1.5707964
+
+[node name="StaticBody2D10" parent="spikes" unique_id=783750617 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -267.1111)
+rotation = 1.5707964
+
+[node name="StaticBody2D11" parent="spikes" unique_id=320090537 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -258.22223)
+rotation = 1.5707964
+
+[node name="StaticBody2D12" parent="spikes" unique_id=448027278 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -249.33334)
+rotation = 1.5707964
+
+[node name="StaticBody2D13" parent="spikes" unique_id=2088529544 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -240.44449)
+rotation = 1.5707964
+
+[node name="StaticBody2D14" parent="spikes" unique_id=570672979 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -231.55554)
+rotation = 1.5707964
+
+[node name="StaticBody2D15" parent="spikes" unique_id=1596822794 instance=ExtResource("4_7opeg")]
+position = Vector2(279.55554, -222.66666)
+rotation = 1.5707964
+
+[node name="StaticBody2D16" parent="spikes" unique_id=1989838554 instance=ExtResource("4_7opeg")]
+position = Vector2(81.77774, 225.77776)
+rotation = -1.5707964
+
+[node name="StaticBody2D17" parent="spikes" unique_id=207187059 instance=ExtResource("4_7opeg")]
+position = Vector2(81.777794, 234.66667)
+rotation = -1.5707964
+
+[node name="StaticBody2D18" parent="spikes" unique_id=1157013402 instance=ExtResource("4_7opeg")]
+position = Vector2(81.777794, 243.55556)
+rotation = -1.5707964
+
+[node name="StaticBody2D19" parent="spikes" unique_id=1873748939 instance=ExtResource("4_7opeg")]
+position = Vector2(81.777794, 252.44444)
+rotation = -1.5707964
+
+[node name="TileMapLayer8" type="TileMapLayer" parent="." unique_id=128437752]
+position = Vector2(16.666695, 29.333347)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAXAPb/AAADAAQAAAAWAPb/AAACAAQAAAAVAPb/AAACAAQAAAAUAPb/AAACAAQAAAATAPb/AAACAAQAAAASAPb/AAACAAQAAAARAPb/AAACAAQAAAAQAPb/AAACAAQAAAAYAAEAAAABAAQAAGAYAPb/AAADAAQAAGAYAAAAAAACAAQAAGAYAP//AAACAAQAAGAYAP7/AAACAAQAAGAYAP3/AAACAAQAAGAYAPz/AAACAAQAAGAYAPv/AAACAAQAAGAYAPr/AAACAAQAAGAYAPn/AAACAAQAAGAYAPj/AAACAAQAAGAYAPf/AAACAAQAAGAdAP3/AAABAAQAAGAdAPz/AAACAAQAAGAdAPv/AAACAAQAAGAdAPr/AAACAAQAAGAdAPn/AAACAAQAAGAdAPj/AAACAAQAAGAdAPf/AAACAAQAAGAdAPb/AAADAAQAAGAFAPr/AAABAAQAAAAIAPr/AAADAAQAAAAGAPr/AAACAAQAAAAHAPr/AAACAAQAAAAPAPb/AAACAAQAAAAOAPb/AAACAAQAAAANAPb/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_2os4r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer8" unique_id=269380347]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D" unique_id=1414641688]
+position = Vector2(41.888866, -32.111122)
+shape = SubResource("RectangleShape2D_mrgsl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D" unique_id=781347401]
+position = Vector2(110.88887, -56.00001)
+shape = SubResource("RectangleShape2D_gwkyt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D" unique_id=298264874]
+position = Vector2(177.99998, -36.000008)
+shape = SubResource("RectangleShape2D_7opeg")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer8/StaticBody2D" unique_id=1993929653]
+position = Vector2(147.77776, -24.00001)
+shape = SubResource("RectangleShape2D_ejsq1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=794791744]
+position = Vector2(282, -10)
+rect = Rect2(-106, -10, 25, 20)
+
+[node name="StaticBody2D7" parent="." unique_id=725642373 instance=ExtResource("3_gwkyt")]
+position = Vector2(90.666664, -36.666664)
+
+[node name="StaticBody2D4" parent="." unique_id=940541769 instance=ExtResource("3_gwkyt")]
+position = Vector2(216.66666, 35.999985)

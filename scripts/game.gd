@@ -31,6 +31,8 @@ func start_countdown():
 	player.can_move = true
 	Global.storm_can_move = true
 	countdown_active = false
+	if !Global.tutorial_seen:
+		player.tutorial()
 func spawn_player(position: Vector2):
 	player = PlayerScene.instantiate()
 	add_child(player)

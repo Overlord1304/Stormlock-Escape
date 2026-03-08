@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ds0kymefeba61"]
+
+[ext_resource type="Script" uid="uid://djiq6g1hwd735" path="res://scripts/segscript.gd" id="1_n7wey"]
+
+[node name="segment2" type="Node2D" unique_id=482240693]
+position = Vector2(100, 4)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_n7wey")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=70921473]
+position = Vector2(282, -10)
+rect = Rect2(-106, -10, 25, 20)
+
+[node name="Label" type="Label" parent="." unique_id=464545758]
+offset_left = -101.33333
+offset_top = -244.0
+offset_right = 7370.6665
+offset_bottom = 8881.0
+theme_override_font_sizes/font_size = 670
